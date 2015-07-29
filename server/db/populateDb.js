@@ -2,8 +2,9 @@
 //!! Needs to be ran a single time to populate datavbae. If all data is deleted from the table, it can be ran again.
 
 var db = require('./db.js')
-var restaurantArray = require('../data/restaurants.js');
+var restaurantArray = require('../data/restaurants.js')
 var crimeArray = require('../data/crimes.js')
+var dogArray = require('../data/dogs.js')
 var Restaurant = require('../models/restaurant.js')
 var RestaurantInspection = require('../models/restaurant_inspection.js')
 var Crime = require('../models/crime.js')
@@ -11,6 +12,16 @@ var Dog = require('../models/dogs.js')
 
 //This function takes an address string, and returns an object that contains lat, lng, and street name
 var parseRestaurantAddress = function (addr){
+  var result = {
+    street: addr.match(/.*\n.*\n/)[0],
+    lat: addr.match(/-?\d{1,3}\.\d*\,/)[0].slice(0,-1),
+    long: addr.match(/-?\d{1,3}\.\d*\)/)[0].slice(0,-1),
+  };
+  return result;
+}
+
+//Parse address for dog locations
+var parseDogAddress = function (addr){
   var result = {
     street: addr.match(/.*\n.*\n/)[0],
     lat: addr.match(/-?\d{1,3}\.\d*\,/)[0].slice(0,-1),
@@ -55,7 +66,22 @@ var insertCrime = function(data){
   });
 }
 
-//this function takes a list of objects with resturant info and populates the restaurants and restaurant inepsections tables
+//insert table row using dangerous dog data - BS
+//FIX THIS
+
+var insertDog = function(data) { 
+  return Dog.create({
+    id: data.id.trim(), //not provided in initial dataset. Should there be a primary key or id?
+    first_name: data.first_name.trim(),
+    zip_code: data.zip_code.trim(),
+    location: data.location.trim(), //should this be lat and long properties of location?
+    description_of_dog: data.description_of_dog.trim(),
+    address: data.address.trim(),
+    last_name: data.last_name.trim()
+  });
+}
+
+//this function takes a list of objects with restaurant info and populates the restaurants and restaurant inepsections tables
 var populateRestaurantTables = function (array){
   array.map(function (info) {
     return insertRestaurant(info)
@@ -73,7 +99,15 @@ var populateCrimeTable = function(array){
   });
 }
 
+//populate dogs?
+var populateDogTable = function(array) {
+  array.forEach(function (dogs){
+    insertDog(dogs)
+  });
+}
+
 //console.log('populating tables')
 
 populateRestaurantTables(restaurantArray)
 populateCrimeTable(crimeArray);
+populateDogTable(dogArray);

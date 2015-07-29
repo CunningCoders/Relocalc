@@ -4,11 +4,11 @@ exports.up = function(knex, Promise) {
     knex.schema.createTable('dogs', function (table){
         table.string('id').primary();
         table.string('first_name');
-        table.string('last_name');
-        table.string('address');
         table.string('zip_code');
+        table.string('location');
         table.string('description_of_dog');
-        table.string('location'); //this seems redundant?
+        table.string('address');
+        table.string('last_name');
         table.timestamps();
     })
   ])
