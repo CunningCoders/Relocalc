@@ -4,6 +4,7 @@
 
 var Crime = require('../models/crime.js');
 var Restaurant = require('../models/restaurant.js');
+var Dog = require('../models/dogs.js')
 var Promise = require('bluebird');
 var geolib = require('geolib')
 

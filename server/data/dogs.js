@@ -1,54 +1,690 @@
-module.exports = [ [ 1019, "62CA8ADC-3E84-4F43-9EA0-955E1401CD85", 1019, 1426169270, "708639", 1426169272, "708639", null, "Johnny", "Adamo", "11305 Cezanne St ", "78726", "“Tyson,” neutered male, German Shepherd", [ "{\"address\":\"11305 Cezanne St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78726\"}", "30.449374842000054", "-97.82093225899996", null, false ] ]
-, [ 1020, "63CBE09D-B902-4261-AE23-557AAD4A7007", 1020, 1426169270, "708639", 1426169272, "708639", null, "Raul", "Amezquita", "2105 Horse Wagon Dr", "78754", "“Kingston,” Neutered Male, white/brown boxer", [ "{\"address\":\"2105 Horse Wagon Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78754\"}", "30.375203614000043", "-97.65040261599995", null, false ] ]
-, [ 1021, "23DD11A5-1ABF-4141-9015-7FDDBE838577", 1021, 1426169270, "708639", 1426169272, "708639", null, "Penny", "Arnold", "3904 Caney Creek", "78732", "“Salty,” male, brown and white Boxer", [ "{\"address\":\"3904 Caney Creek\",\"city\":\"\",\"state\":\"\",\"zip\":\"78732\"}", "30.379098327000065", "-97.88880050499995", null, false ] ]
-, [ 1022, "BF613908-ACB4-43D6-9C1C-FBE779E085AB", 1022, 1426169270, "708639", 1426169272, "708639", null, "Richard ", "Ashcraft", "11511 Catalonia Dr", "78759", "“Bumpy,” neutered male, white and black Bull Terrier", [ "{\"address\":\"11511 Catalonia Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78759\"}", "30.41083447300008", "-97.73919514799996", null, false ] ]
-, [ 1023, "A3EB415B-0927-4C10-B226-8647B1CFA08A", 1023, 1426169270, "708639", 1426169272, "708639", null, "Richard ", "Ashcraft", "11511 Catalonia Dr", "78759", "“Little Girl,” spayed female, brown brindle and white Bull Terrier", [ "{\"address\":\"11511 Catalonia Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78759\"}", "30.41083447300008", "-97.73919514799996", null, false ] ]
-, [ 1024, "98165B38-EF72-4586-97CA-82D3CAC08997", 1024, 1426169270, "708639", 1426169272, "708639", null, "Francisco", "Banda", "4809 Clear View Dr", "78725", "“Weezer,” female, Tan/Brown German Shepherd", [ "{\"address\":\"4809 Clear View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}", "30.244973876000074", "-97.58072528699995", null, false ] ]
-, [ 1025, "B4271495-868C-462F-8685-49F7361F6818", 1025, 1426169270, "708639", 1426169272, "708639", null, "Francisco", "Banda", "4809 Clear View Dr", "78725", "“Ursula,” female, Tan/Brown German Shepherd", [ "{\"address\":\"4809 Clear View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}", "30.244973876000074", "-97.58072528699995", null, false ] ]
-, [ 1026, "9B8B0C60-454C-4560-8CD8-DFB74F3C20BB", 1026, 1426169270, "708639", 1426169272, "708639", null, "Francisco", "Banda", "4809 Clear View Dr", "78725", "“Porsche,” female, Tan/Brown German Shepherd", [ "{\"address\":\"4809 Clear View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}", "30.244973876000074", "-97.58072528699995", null, false ] ]
-, [ 1027, "149EE52A-E5AE-42FD-9EAB-639CFC666B8C", 1027, 1426169270, "708639", 1426169272, "708639", null, "Jack", "Barnett", "13101 Winding Creek Rd", "78736", "\"Holly\" Spayed female, white Labrador/Pitbull mix", [ "{\"address\":\"13101 Winding Creek Rd\",\"city\":\"\",\"state\":\"\",\"zip\":\"78736\"}", "30.240520307000054", "-97.99205186899997", null, false ] ]
-, [ 1028, "29169B23-9E29-480D-9869-FC862AF6ECDC", 1028, 1426169270, "708639", 1426169272, "708639", null, "Randall", "Burt", "705 Texas St", "78705", "“Jack,” neutered male, red/white Labrador Retriever mix     ", [ "{\"address\":\"705 Texas St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78705\"}", "30.296755116000043", "-97.72827266899998", null, false ] ]
-, [ 1029, "BABD98F9-B5A2-4CA8-90A9-82112A49B70F", 1029, 1426169270, "708639", 1426169272, "708639", null, "Rebecca", "Byrnes", "2401 Cecil Dr", "78744", "“Pinky,” female, white Boxer mix", [ "{\"address\":\"2401 Cecil Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}", "30.165003213000034", "-97.77297889799996", null, false ] ]
-, [ 1030, "BFCB4A7D-4247-449B-AF3A-366B06B85B54", 1030, 1426169270, "708639", 1426169272, "708639", null, "Rebecca", "Byrnes", "2401 Cecil Dr", "78744", "“Shebba,” female, white Pit Bull mix ", [ "{\"address\":\"2401 Cecil Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}", "30.165003213000034", "-97.77297889799996", null, false ] ]
-, [ 1031, "BA0BC6EA-1639-4BB9-8FC1-7BADB4ED8D21", 1031, 1426169270, "708639", 1426169272, "708639", null, "Jesse", "Carlin", "905 Tudor House Road ", "78660", "\"Maya,\" spayed female, brown/white Pitbull mix", [ "{\"address\":\"905 Tudor House Road\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}", "30.421499993000054", "-97.64043998699998", null, false ] ]
-, [ 1032, "681EE2D3-DA18-403E-B1D4-D281DEE4EE5C", 1032, 1426169270, "708639", 1426169272, "708639", null, "Tim", "Carrington", "2718 Jorwoods Dr", "78745", "“Ladybird,” Spayed female, yellow brindle and white Pit Bull mix", [ "{\"address\":\"2718 Jorwoods Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78745\"}", "30.20119638500006", "-97.82184832299998", null, false ] ]
-, [ 1033, "E5C37A3D-B86B-4A9C-B339-E08B1AE82332", 1033, 1426169270, "708639", 1426169272, "708639", null, "Jil Scott", "Carse", "1411 Justin Ln", "78757", "“Nippy,” female, black and tan Shepherd mix", [ "{\"address\":\"1411 Justin Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78757\"}", "30.34099582400006", "-97.72750294399998", null, false ] ]
-, [ 1034, "6E26CE9A-2CB7-45BF-AD28-F685B18AC0C8", 1034, 1426169270, "708639", 1426169272, "708639", null, "Andres", "Castro", "2520 East 3rd St", "78702", "“Keely,” spayed female, Red Labrador Retriever mix", [ "{\"address\":\"2520 East 3rd St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78702\"}", "30.25576730000006", "-97.71469187499997", null, false ] ]
-, [ 1035, "F1C0C5EE-8306-4DB6-8201-98B6436B6540", 1035, 1426169270, "708639", 1426169272, "708639", null, "Maria", "Davila", "4420 Dovemeadow Dr", "78744", "“Tiny,” male, tan and white Boxer mix", [ "{\"address\":\"4420 Dovemeadow Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}", "30.18895339100004", "-97.75089311299996", null, false ] ]
-, [ 1036, "ADF54FE0-F934-4228-B75E-248077B42ABB", 1036, 1426169270, "708639", 1426169272, "708639", null, "Douglas ", "Esfandiari", "6501 Corpus Christi Dr ", "78729", "\"Macha\" female, brown and white Pit Bull", [ "{\"address\":\"6501 Corpus Christi Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78729\"}", "30.445924911000077", "-97.74553961199996", null, false ] ]
-, [ 1037, "BF14C6AE-2BA9-4A8C-91BB-11E8936F500D", 1037, 1426169270, "708639", 1426169272, "708639", null, "Jazzias", "Flores", "14329 Teacup Ln", "78660", "“Maia,” female, white/tan Pit Bull mix", [ "{\"address\":\"14329 Teacup Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}", "30.418035082000074", "-97.63678494899995", null, false ] ]
-, [ 1038, "1C2D0264-7E47-4DBB-B430-C5D290BC73CA", 1038, 1426169270, "708639", 1426169272, "708639", null, "Jazzias", "Flores", "14329 Teacup Ln", "78660", "“Boomer”, neutered brown Pit Bull Mix", [ "{\"address\":\"14329 Teacup Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}", "30.418035082000074", "-97.63678494899995", null, false ] ]
-, [ 1039, "9238A5C9-7486-406B-8656-FFF246BB3818", 1039, 1426169270, "708639", 1426169272, "708639", null, "Donnie", "Garcia", "9211 Laralan Dr", "78736", "\"Lucy\" spayed female, white Pit Bull mix", [ "{\"address\":\"9211 Laralan Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78736\"}", "30.24397484700006", "-97.90866008199998", null, false ] ]
-, [ 1040, "E076F72D-5B01-4E94-A7C0-8F8C667739C1", 1040, 1426169270, "708639", 1426169272, "708639", null, "Miguel", "Garcia", "4812 Candletree Ln", "78744", "“Lucky,” male, black and tri-colored Chihuahua", [ "{\"address\":\"4812 Candletree Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}", "30.18837379300004", "-97.74621484899995", null, false ] ]
-, [ 1041, "1155D61F-1DC2-4144-BB30-619AF6CDF2EC", 1041, 1426169270, "708639", 1426169272, "708639", null, "Maria", "Gonzalez", "20608 Ed Acklin Rd", "78653", "“Coronel,” Male, Tan/Black German Shepherd mix", [ "{\"address\":\"20608 Ed Acklin Rd\",\"city\":\"\",\"state\":\"\",\"zip\":\"78653\"}", "30.276365489000057", "-97.49122755799999", null, false ] ]
-, [ 1042, "648F154B-9BCE-496F-9329-41748EA10C05", 1042, 1426169270, "708639", 1426169272, "708639", null, "Mikal/Gerti", "Gonzales", "7600 Bloomfield Ave", "78745", "\"Buddy,\" male, blue brindle and white Pitbull mix", [ "{\"address\":\"7600 Bloomfield Ave\",\"city\":\"\",\"state\":\"\",\"zip\":\"78745\"}", "30.20490673300003", "-97.82896596699999", null, false ] ]
-, [ 1043, "C04F9364-994B-4B8D-B4DC-35256842E8C8", 1043, 1426169270, "708639", 1426169272, "708639", null, "Jenifer", "Harkness", "2815 Rockridge Dr", "78744", "\"Shilo,” female, tan and white Siberian Husky mix", [ "{\"address\":\"2815 Rockridge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}", "30.182853521000027", "-97.75696847299997", null, false ] ]
-, [ 1044, "5C2DCE07-D395-40E5-A23E-8EF02AA86960", 1044, 1426169270, "708639", 1426169272, "708639", null, "Mary Christina ", "Hernandez", "1712  Whitney Way", "78741", "“Precious Diamond,” female, black and tri-colored Labrador Retriever mix  ", [ "{\"address\":\"1712 Whitney Way\",\"city\":\"\",\"state\":\"\",\"zip\":\"78741\"}", "30.230437841000025", "-97.71093428399996", null, false ] ]
-, [ 1045, "9C64DC3C-ECD7-41F4-8820-5269ECD62460", 1045, 1426169270, "708639", 1426169272, "708639", null, "Adele", "Johnson", "1302 Lipan Trl", "78733", "\"Tank,\" neutered, black/grey German Wire-haired Pointer ", [ "{\"address\":\"1302 Lipan Trl\",\"city\":\"\",\"state\":\"\",\"zip\":\"78733\"}", "30.33922707100004", "-97.87055527499996", null, false ] ]
-, [ 1046, "FA0BCFD4-3032-4051-9315-F4F38E53EEA6", 1046, 1426169270, "708639", 1426169272, "708639", null, "Jill ", "Kolansinski ", "608 Academy Dr", "78704", "“Tug,” male, brown merle and white Queensland Heeler mix", [ "{\"address\":\"608 Academy Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78704\"}", "30.250998005000042", "-97.74121970699997", null, false ] ]
-, [ 1047, "8340F30D-7ADF-40F1-B4BD-4E8D6EA6DAEF", 1047, 1426169270, "708639", 1426169272, "708639", null, "Mike", "Kool", "1302 Canyon Edge Dr", "78733", "“Milo,” neutered male, white/brown, German Short-haired Pointer", [ "{\"address\":\"1302 Canyon Edge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78733\"}", "30.33604792600005", "-97.86434447599999", null, false ] ]
-, [ 1048, "9F0AD55B-1D88-42AB-BD93-9B0E40241444", 1048, 1426169270, "708639", 1426169272, "708639", null, "Chester ", "Kudlek", "2401 Emmett Pkwy", "78728", "\"Gucio\" malek, black Giant Schnauzer", [ "{\"address\":\"2401 Emmett Pkwy\",\"city\":\"\",\"state\":\"\",\"zip\":\"78728\"}", "30.45237538400005", "-97.67774280599997", null, false ] ]
-, [ 1049, "D846ED12-6EC4-4A71-BA22-9E7DB0BE664B", 1049, 1426169270, "708639", 1426169272, "708639", null, "Timothy ", "LeBlanc", "5931 Cape Coral Dr", "78746", "\"Miles Davis,\" female, gold/white Golden Retriever ", [ "{\"address\":\"5931 Cape Coral Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78746\"}", "30.27895697100007", "-97.83602023699996", null, false ] ]
-, [ 1050, "3A0C5965-FE4C-45CF-A361-E77FDE0A1C3B", 1050, 1426169270, "708639", 1426169272, "708639", null, "Ernesto", "Lozano ", "11929 Rosethorn Dr", "78758", "“G,” male, brown Pit Bull/Boxer mix  ", [ "{\"address\":\"11929 Rosethorn Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78758\"}", "30.400144754000053", "-97.70034020499997", null, false ] ]
-, [ 1051, "186A8BE1-76D8-4186-B75E-A7A37F22A775", 1051, 1426169270, "708639", 1426169272, "708639", null, "Katherine ", "Maloney", "11504 Murcia Dr", "78759", "“Lexie,” female, white and black Pit Bull  ", [ "{\"address\":\"11504 Murcia Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78759\"}", "30.409878079000066", "-97.73882526499995", null, false ] ]
-, [ 1052, "B39755A8-61B0-4605-87C6-16F9EF773E2B", 1052, 1426169270, "708639", 1426169272, "708639", null, "Orlando", "Martinez", "7002 Montana St", "78741", "“Lily,” female, black and white Chihuahua", [ "{\"address\":\"7002 Montana St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78741\"}", "30.228893783000046", "-97.69159323399998", null, false ] ]
-, [ 1053, "B3FC8F8E-936F-4976-8B0A-E5E6AC08767B", 1053, 1426169270, "708639", 1426169272, "708639", null, "Leslie ", "Matthews", "3703 Grayson Ln", "78722", "\"Abbo\" neutered male, white/brown Great Pyrenees mix ", [ "{\"address\":\"3703 Grayson Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78722\"}", "30.28821555500008", "-97.70892355199999", null, false ] ]
-, [ 1054, "77B2F1F0-54B5-47D7-BC99-CFB3ECDDEBA4", 1054, 1426169270, "708639", 1426169272, "708639", null, "Robert ", "McKinley", "1205 Quail Park Dr", "78758", "\"Cinnamon\" female, red and white Border Collie ", [ "{\"address\":\"1205 Quail Park Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78758\"}", "30.365335473000073", "-97.70609239599997", null, false ] ]
-, [ 1055, "54993B1E-2E4C-4088-80F7-811DFF0ABD52", 1055, 1426169270, "708639", 1426169272, "708639", null, "Deirdre", "Mitchell", "11824 Morning View Dr", "78617", "“Lia,” spayed female, white/black Pit Bull/Jack Russell mix", [ "{\"address\":\"11824 Morning View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78617\"}", "30.153928633000078", "-97.64780882899998", null, false ] ]
-, [ 1056, "DBDCBE3F-AF69-4B7C-90E2-0F2EDE053BF3", 1056, 1426169270, "708639", 1426169272, "708639", null, "Deirdre", "Mitchell", "11824 Morning View Dr", "78617", "“Lady Bug” spayed female, white/black Pit bull/Jack Russell mix", [ "{\"address\":\"11824 Morning View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78617\"}", "30.153928633000078", "-97.64780882899998", null, false ] ]
-, [ 1057, "23D8D23C-8BF3-476A-B4A9-BB44CF2074DE", 1057, 1426169270, "708639", 1426169272, "708639", null, "Matthew ", "Rafacz", "7400 Espira Drive ", "78739", "\"Charlie\" neutered male, black and white Labrador Retriever mix ", [ "{\"address\":\"7400 Espira Drive\",\"city\":\"\",\"state\":\"\",\"zip\":\"78739\"}", "30.18304319400005", "-97.88703984499995", null, false ] ]
-, [ 1058, "3DB9524E-CDFE-4347-96BE-3B8660697C26", 1058, 1426169270, "708639", 1426169272, "708639", null, "Valerie", "Raven", "4707 Carsonhill Dr", "78723", "“Sissy,” female, tan and black German Shepherd", [ "{\"address\":\"4707 Carsonhill Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78723\"}", "30.288163703000066", "-97.67658821999999", null, false ] ]
-, [ 1059, "CD0E38A9-A6FB-4BFC-96A4-559480286A7D", 1059, 1426169270, "708639", 1426169272, "708639", null, "Jim", "Rehage", "14028 Lakeview Dr", "78732", "“Iko,” neutered male, Brown Brindle Catahoula  mix", [ "{\"address\":\"14028 Lakeview Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78732\"}", "30.41498729600005", "-97.89324600799995", null, false ] ]
-, [ 1060, "F03EEDF4-01D6-4153-954B-036F520F4F34", 1060, 1426169270, "708639", 1426169272, "708639", null, "Adrian Rivera-Clemente ", "Rivera-Clemente ", "18300 Belfry Pass", "78653", "“Diva,” intact female, tri-color Pit Bull", [ "{\"address\":\"18300 Belfry Pass\",\"city\":\"\",\"state\":\"\",\"zip\":\"78653\"}", "30.31698688000006", "-97.53009632799996", null, false ] ]
-, [ 1061, "C181E908-196C-442D-B189-27CA2FA381B9", 1061, 1426169270, "708639", 1426169272, "708639", null, "Kim", "Sadler", "7916 Adelaide Dr ", "78739", "\"Sydney\" spayed female, Tricolor/Black Beagle ", [ "{\"address\":\"7916 Adelaide Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78739\"}", "30.191546025000036", "-97.91933136399996", null, false ] ]
-, [ 1062, "982A16D7-3EA1-4CB7-A17D-91279B1198DA", 1062, 1426169270, "708639", 1426169272, "708639", null, "Johy ", "Saha", "1512 Miss Allison Way", "78660", "\"Precious\" female, tan Labrador Retriever mix ", [ "{\"address\":\"1512 Miss Allison Way\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}", "30.44785267800006", "-97.66004030099998", null, false ] ]
-, [ 1063, "9A130054-0C02-4848-B6E2-F817F4E14491", 1063, 1426169270, "708639", 1426169272, "708639", null, "Ofelia", "Segura", "911 Peggotty Pl", "78753", "“Smokey,” neutered, blue and white Pit Bull mix  ", [ "{\"address\":\"911 Peggotty Pl\",\"city\":\"\",\"state\":\"\",\"zip\":\"78753\"}", "30.387622908000026", "-97.66532581799999", null, false ] ]
-, [ 1064, "BFB3B1B6-8CB3-4785-B9CD-FC1E77AA2B9F", 1064, 1426169270, "708639", 1426169272, "708639", null, "Eligio", "Sparks", "7005 Bright Star Ln", "78736", "“Grey,” spayed female, black/white Queensland Heeler", [ "{\"address\":\"7005 Bright Star Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78736\"}", "30.24972473400004", "-97.90835472799995", null, false ] ]
-, [ 1065, "F3854B45-BDDF-47A5-9A4C-1505983EEE70", 1065, 1426169270, "708639", 1426169272, "708639", null, "Melissa", "Spellmann", "2815 Oak Ridge Dr", "78669", "“Sparkles,” spayed female, Brindle Plott Hound mix", [ "{\"address\":\"2815 Oak Ridge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78669\"}", "30.36883034400006", "-98.03610936499996", null, false ] ]
-, [ 1066, "C2D736B5-2624-4D70-8E79-40130D687B63", 1066, 1426169270, "708639", 1426169272, "708639", null, "Melissa", "Spellmann", "2815 Oak Ridge Dr", "78669", "“Lacy,” spayed female, Labrador Retriever Mix", [ "{\"address\":\"2815 Oak Ridge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78669\"}", "30.36883034400006", "-98.03610936499996", null, false ] ]
-, [ 1067, "A8E40A7E-9FCD-475F-B526-81E92D5E9A87", 1067, 1426169270, "708639", 1426169272, "708639", null, "Ronald", "Vasey", "4704 Sunridge Ct", "78741", "“Rita,” female, brown Australian Shepherd  ", [ "{\"address\":\"4704 Sunridge Ct\",\"city\":\"\",\"state\":\"\",\"zip\":\"78741\"}", "30.219546473000037", "-97.72731166599999", null, false ] ]
-, [ 1068, "5B593870-10F9-4ECF-88A7-031493245FD5", 1068, 1426169270, "708639", 1426169272, "708639", null, "Carla", "Ward", "2305 Thornwild Pass", "78758", "“Lincoln,” male, fawn and white Pit Bull Terrier", [ "{\"address\":\"2305 Thornwild Pass\",\"city\":\"\",\"state\":\"\",\"zip\":\"78758\"}", "30.413084879000053", "-97.70205249599996", null, false ] ]
-, [ 1069, "749A5BCF-A3CA-4B93-80E6-D5AD2218371E", 1069, 1426169270, "708639", 1426169272, "708639", null, "Andrew ", "Willingham", "6604 Jamaica Ct", "78757", "\"Cleo\" female, black Labrador Retriever mix ", [ "{\"address\":\"6604 Jamaica Ct\",\"city\":\"\",\"state\":\"\",\"zip\":\"78757\"}", "30.347369095000033", "-97.74893192899998", null, false ] ]
-, [ 1070, "B3913B70-0888-46C7-AFF5-AAE365BAA78E", 1070, 1426169270, "708639", 1426169272, "708639", null, "Carol", "Winter ", "4008 Reeder Dr", "78725", "\"Gucio\" male, black Giant Schnauzer ", [ "{\"address\":\"4008 Reeder Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}", "30.24017692700005", "-97.58797659599998", null, false ] ]
-, [ 1071, "92ED67FA-1FD7-4DB9-B514-F04531221AC0", 1071, 1426169270, "708639", 1426169272, "708639", null, "Lorena", "Zuniga", "3415 Sweetgum Trc", "78713", "“Mulligan,” neutered male, Brindle Bullmastiff", [ "{\"address\":\"3415 Sweetgum\",\"city\":\"Trc\",\"state\":\"\",\"zip\":\"78713\"}", "30.285003093000057", "-97.74183845099998", null, false ] ]
- 
+module.exports = [ {
+  "first_name" : "Johnny",
+  "zip_code" : "78726",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.82093225899996",
+    "latitude" : "30.449374842000054",
+    "human_address" : "{\"address\":\"11305 Cezanne St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78726\"}"
+  },
+  "description_of_dog" : "“Tyson,” neutered male, German Shepherd",
+  "address" : "11305 Cezanne St ",
+  "last_name" : "Adamo"
+}
+, {
+  "first_name" : "Raul",
+  "zip_code" : "78754",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.65040261599995",
+    "latitude" : "30.375203614000043",
+    "human_address" : "{\"address\":\"2105 Horse Wagon Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78754\"}"
+  },
+  "description_of_dog" : "“Kingston,” Neutered Male, white/brown boxer",
+  "address" : "2105 Horse Wagon Dr",
+  "last_name" : "Amezquita"
+}
+, {
+  "first_name" : "Penny",
+  "zip_code" : "78732",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.88880050499995",
+    "latitude" : "30.379098327000065",
+    "human_address" : "{\"address\":\"3904 Caney Creek\",\"city\":\"\",\"state\":\"\",\"zip\":\"78732\"}"
+  },
+  "description_of_dog" : "“Salty,” male, brown and white Boxer",
+  "address" : "3904 Caney Creek",
+  "last_name" : "Arnold"
+}
+, {
+  "first_name" : "Richard ",
+  "zip_code" : "78759",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.73919514799996",
+    "latitude" : "30.41083447300008",
+    "human_address" : "{\"address\":\"11511 Catalonia Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78759\"}"
+  },
+  "description_of_dog" : "“Bumpy,” neutered male, white and black Bull Terrier",
+  "address" : "11511 Catalonia Dr",
+  "last_name" : "Ashcraft"
+}
+, {
+  "first_name" : "Richard ",
+  "zip_code" : "78759",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.73919514799996",
+    "latitude" : "30.41083447300008",
+    "human_address" : "{\"address\":\"11511 Catalonia Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78759\"}"
+  },
+  "description_of_dog" : "“Little Girl,” spayed female, brown brindle and white Bull Terrier",
+  "address" : "11511 Catalonia Dr",
+  "last_name" : "Ashcraft"
+}
+, {
+  "first_name" : "Francisco",
+  "zip_code" : "78725",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.58072528699995",
+    "latitude" : "30.244973876000074",
+    "human_address" : "{\"address\":\"4809 Clear View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}"
+  },
+  "description_of_dog" : "“Weezer,” female, Tan/Brown German Shepherd",
+  "address" : "4809 Clear View Dr",
+  "last_name" : "Banda"
+}
+, {
+  "first_name" : "Francisco",
+  "zip_code" : "78725",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.58072528699995",
+    "latitude" : "30.244973876000074",
+    "human_address" : "{\"address\":\"4809 Clear View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}"
+  },
+  "description_of_dog" : "“Ursula,” female, Tan/Brown German Shepherd",
+  "address" : "4809 Clear View Dr",
+  "last_name" : "Banda"
+}
+, {
+  "first_name" : "Francisco",
+  "zip_code" : "78725",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.58072528699995",
+    "latitude" : "30.244973876000074",
+    "human_address" : "{\"address\":\"4809 Clear View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}"
+  },
+  "description_of_dog" : "“Porsche,” female, Tan/Brown German Shepherd",
+  "address" : "4809 Clear View Dr",
+  "last_name" : "Banda"
+}
+, {
+  "first_name" : "Jack",
+  "zip_code" : "78736",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.99205186899997",
+    "latitude" : "30.240520307000054",
+    "human_address" : "{\"address\":\"13101 Winding Creek Rd\",\"city\":\"\",\"state\":\"\",\"zip\":\"78736\"}"
+  },
+  "description_of_dog" : "\"Holly\" Spayed female, white Labrador/Pitbull mix",
+  "address" : "13101 Winding Creek Rd",
+  "last_name" : "Barnett"
+}
+, {
+  "first_name" : "Randall",
+  "zip_code" : "78705",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.72827266899998",
+    "latitude" : "30.296755116000043",
+    "human_address" : "{\"address\":\"705 Texas St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78705\"}"
+  },
+  "description_of_dog" : "“Jack,” neutered male, red/white Labrador Retriever mix     ",
+  "address" : "705 Texas St",
+  "last_name" : "Burt"
+}
+, {
+  "first_name" : "Rebecca",
+  "zip_code" : "78744",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.77297889799996",
+    "latitude" : "30.165003213000034",
+    "human_address" : "{\"address\":\"2401 Cecil Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}"
+  },
+  "description_of_dog" : "“Pinky,” female, white Boxer mix",
+  "address" : "2401 Cecil Dr",
+  "last_name" : "Byrnes"
+}
+, {
+  "first_name" : "Rebecca",
+  "zip_code" : "78744",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.77297889799996",
+    "latitude" : "30.165003213000034",
+    "human_address" : "{\"address\":\"2401 Cecil Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}"
+  },
+  "description_of_dog" : "“Shebba,” female, white Pit Bull mix ",
+  "address" : "2401 Cecil Dr",
+  "last_name" : "Byrnes"
+}
+, {
+  "first_name" : "Jesse",
+  "zip_code" : "78660",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.64043998699998",
+    "latitude" : "30.421499993000054",
+    "human_address" : "{\"address\":\"905 Tudor House Road\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}"
+  },
+  "description_of_dog" : "\"Maya,\" spayed female, brown/white Pitbull mix",
+  "address" : "905 Tudor House Road ",
+  "last_name" : "Carlin"
+}
+, {
+  "first_name" : "Tim",
+  "zip_code" : "78745",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.82184832299998",
+    "latitude" : "30.20119638500006",
+    "human_address" : "{\"address\":\"2718 Jorwoods Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78745\"}"
+  },
+  "description_of_dog" : "“Ladybird,” Spayed female, yellow brindle and white Pit Bull mix",
+  "address" : "2718 Jorwoods Dr",
+  "last_name" : "Carrington"
+}
+, {
+  "first_name" : "Jil Scott",
+  "zip_code" : "78757",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.72750294399998",
+    "latitude" : "30.34099582400006",
+    "human_address" : "{\"address\":\"1411 Justin Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78757\"}"
+  },
+  "description_of_dog" : "“Nippy,” female, black and tan Shepherd mix",
+  "address" : "1411 Justin Ln",
+  "last_name" : "Carse"
+}
+, {
+  "first_name" : "Andres",
+  "zip_code" : "78702",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.71469187499997",
+    "latitude" : "30.25576730000006",
+    "human_address" : "{\"address\":\"2520 East 3rd St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78702\"}"
+  },
+  "description_of_dog" : "“Keely,” spayed female, Red Labrador Retriever mix",
+  "address" : "2520 East 3rd St",
+  "last_name" : "Castro"
+}
+, {
+  "first_name" : "Maria",
+  "zip_code" : "78744",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.75089311299996",
+    "latitude" : "30.18895339100004",
+    "human_address" : "{\"address\":\"4420 Dovemeadow Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}"
+  },
+  "description_of_dog" : "“Tiny,” male, tan and white Boxer mix",
+  "address" : "4420 Dovemeadow Dr",
+  "last_name" : "Davila"
+}
+, {
+  "first_name" : "Douglas ",
+  "zip_code" : "78729",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.74553961199996",
+    "latitude" : "30.445924911000077",
+    "human_address" : "{\"address\":\"6501 Corpus Christi Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78729\"}"
+  },
+  "description_of_dog" : "\"Macha\" female, brown and white Pit Bull",
+  "address" : "6501 Corpus Christi Dr ",
+  "last_name" : "Esfandiari"
+}
+, {
+  "first_name" : "Jazzias",
+  "zip_code" : "78660",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.63678494899995",
+    "latitude" : "30.418035082000074",
+    "human_address" : "{\"address\":\"14329 Teacup Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}"
+  },
+  "description_of_dog" : "“Maia,” female, white/tan Pit Bull mix",
+  "address" : "14329 Teacup Ln",
+  "last_name" : "Flores"
+}
+, {
+  "first_name" : "Jazzias",
+  "zip_code" : "78660",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.63678494899995",
+    "latitude" : "30.418035082000074",
+    "human_address" : "{\"address\":\"14329 Teacup Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}"
+  },
+  "description_of_dog" : "“Boomer”, neutered brown Pit Bull Mix",
+  "address" : "14329 Teacup Ln",
+  "last_name" : "Flores"
+}
+, {
+  "first_name" : "Donnie",
+  "zip_code" : "78736",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.90866008199998",
+    "latitude" : "30.24397484700006",
+    "human_address" : "{\"address\":\"9211 Laralan Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78736\"}"
+  },
+  "description_of_dog" : "\"Lucy\" spayed female, white Pit Bull mix",
+  "address" : "9211 Laralan Dr",
+  "last_name" : "Garcia"
+}
+, {
+  "first_name" : "Miguel",
+  "zip_code" : "78744",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.74621484899995",
+    "latitude" : "30.18837379300004",
+    "human_address" : "{\"address\":\"4812 Candletree Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}"
+  },
+  "description_of_dog" : "“Lucky,” male, black and tri-colored Chihuahua",
+  "address" : "4812 Candletree Ln",
+  "last_name" : "Garcia"
+}
+, {
+  "first_name" : "Maria",
+  "zip_code" : "78653",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.49122755799999",
+    "latitude" : "30.276365489000057",
+    "human_address" : "{\"address\":\"20608 Ed Acklin Rd\",\"city\":\"\",\"state\":\"\",\"zip\":\"78653\"}"
+  },
+  "description_of_dog" : "“Coronel,” Male, Tan/Black German Shepherd mix",
+  "address" : "20608 Ed Acklin Rd",
+  "last_name" : "Gonzalez"
+}
+, {
+  "first_name" : "Mikal/Gerti",
+  "zip_code" : "78745",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.82896596699999",
+    "latitude" : "30.20490673300003",
+    "human_address" : "{\"address\":\"7600 Bloomfield Ave\",\"city\":\"\",\"state\":\"\",\"zip\":\"78745\"}"
+  },
+  "description_of_dog" : "\"Buddy,\" male, blue brindle and white Pitbull mix",
+  "address" : "7600 Bloomfield Ave",
+  "last_name" : "Gonzales"
+}
+, {
+  "first_name" : "Jenifer",
+  "zip_code" : "78744",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.75696847299997",
+    "latitude" : "30.182853521000027",
+    "human_address" : "{\"address\":\"2815 Rockridge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78744\"}"
+  },
+  "description_of_dog" : "\"Shilo,” female, tan and white Siberian Husky mix",
+  "address" : "2815 Rockridge Dr",
+  "last_name" : "Harkness"
+}
+, {
+  "first_name" : "Mary Christina ",
+  "zip_code" : "78741",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.71093428399996",
+    "latitude" : "30.230437841000025",
+    "human_address" : "{\"address\":\"1712 Whitney Way\",\"city\":\"\",\"state\":\"\",\"zip\":\"78741\"}"
+  },
+  "description_of_dog" : "“Precious Diamond,” female, black and tri-colored Labrador Retriever mix  ",
+  "address" : "1712  Whitney Way",
+  "last_name" : "Hernandez"
+}
+, {
+  "first_name" : "Adele",
+  "zip_code" : "78733",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.87055527499996",
+    "latitude" : "30.33922707100004",
+    "human_address" : "{\"address\":\"1302 Lipan Trl\",\"city\":\"\",\"state\":\"\",\"zip\":\"78733\"}"
+  },
+  "description_of_dog" : "\"Tank,\" neutered, black/grey German Wire-haired Pointer ",
+  "address" : "1302 Lipan Trl",
+  "last_name" : "Johnson"
+}
+, {
+  "first_name" : "Jill ",
+  "zip_code" : "78704",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.74121970699997",
+    "latitude" : "30.250998005000042",
+    "human_address" : "{\"address\":\"608 Academy Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78704\"}"
+  },
+  "description_of_dog" : "“Tug,” male, brown merle and white Queensland Heeler mix",
+  "address" : "608 Academy Dr",
+  "last_name" : "Kolansinski "
+}
+, {
+  "first_name" : "Mike",
+  "zip_code" : "78733",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.86434447599999",
+    "latitude" : "30.33604792600005",
+    "human_address" : "{\"address\":\"1302 Canyon Edge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78733\"}"
+  },
+  "description_of_dog" : "“Milo,” neutered male, white/brown, German Short-haired Pointer",
+  "address" : "1302 Canyon Edge Dr",
+  "last_name" : "Kool"
+}
+, {
+  "first_name" : "Chester ",
+  "zip_code" : "78728",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.67774280599997",
+    "latitude" : "30.45237538400005",
+    "human_address" : "{\"address\":\"2401 Emmett Pkwy\",\"city\":\"\",\"state\":\"\",\"zip\":\"78728\"}"
+  },
+  "description_of_dog" : "\"Gucio\" malek, black Giant Schnauzer",
+  "address" : "2401 Emmett Pkwy",
+  "last_name" : "Kudlek"
+}
+, {
+  "first_name" : "Timothy ",
+  "zip_code" : "78746",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.83602023699996",
+    "latitude" : "30.27895697100007",
+    "human_address" : "{\"address\":\"5931 Cape Coral Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78746\"}"
+  },
+  "description_of_dog" : "\"Miles Davis,\" female, gold/white Golden Retriever ",
+  "address" : "5931 Cape Coral Dr",
+  "last_name" : "LeBlanc"
+}
+, {
+  "first_name" : "Ernesto",
+  "zip_code" : "78758",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.70034020499997",
+    "latitude" : "30.400144754000053",
+    "human_address" : "{\"address\":\"11929 Rosethorn Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78758\"}"
+  },
+  "description_of_dog" : "“G,” male, brown Pit Bull/Boxer mix  ",
+  "address" : "11929 Rosethorn Dr",
+  "last_name" : "Lozano "
+}
+, {
+  "first_name" : "Katherine ",
+  "zip_code" : "78759",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.73882526499995",
+    "latitude" : "30.409878079000066",
+    "human_address" : "{\"address\":\"11504 Murcia Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78759\"}"
+  },
+  "description_of_dog" : "“Lexie,” female, white and black Pit Bull  ",
+  "address" : "11504 Murcia Dr",
+  "last_name" : "Maloney"
+}
+, {
+  "first_name" : "Orlando",
+  "zip_code" : "78741",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.69159323399998",
+    "latitude" : "30.228893783000046",
+    "human_address" : "{\"address\":\"7002 Montana St\",\"city\":\"\",\"state\":\"\",\"zip\":\"78741\"}"
+  },
+  "description_of_dog" : "“Lily,” female, black and white Chihuahua",
+  "address" : "7002 Montana St",
+  "last_name" : "Martinez"
+}
+, {
+  "first_name" : "Leslie ",
+  "zip_code" : "78722",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.70892355199999",
+    "latitude" : "30.28821555500008",
+    "human_address" : "{\"address\":\"3703 Grayson Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78722\"}"
+  },
+  "description_of_dog" : "\"Abbo\" neutered male, white/brown Great Pyrenees mix ",
+  "address" : "3703 Grayson Ln",
+  "last_name" : "Matthews"
+}
+, {
+  "first_name" : "Robert ",
+  "zip_code" : "78758",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.70609239599997",
+    "latitude" : "30.365335473000073",
+    "human_address" : "{\"address\":\"1205 Quail Park Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78758\"}"
+  },
+  "description_of_dog" : "\"Cinnamon\" female, red and white Border Collie ",
+  "address" : "1205 Quail Park Dr",
+  "last_name" : "McKinley"
+}
+, {
+  "first_name" : "Deirdre",
+  "zip_code" : "78617",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.64780882899998",
+    "latitude" : "30.153928633000078",
+    "human_address" : "{\"address\":\"11824 Morning View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78617\"}"
+  },
+  "description_of_dog" : "“Lia,” spayed female, white/black Pit Bull/Jack Russell mix",
+  "address" : "11824 Morning View Dr",
+  "last_name" : "Mitchell"
+}
+, {
+  "first_name" : "Deirdre",
+  "zip_code" : "78617",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.64780882899998",
+    "latitude" : "30.153928633000078",
+    "human_address" : "{\"address\":\"11824 Morning View Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78617\"}"
+  },
+  "description_of_dog" : "“Lady Bug” spayed female, white/black Pit bull/Jack Russell mix",
+  "address" : "11824 Morning View Dr",
+  "last_name" : "Mitchell"
+}
+, {
+  "first_name" : "Matthew ",
+  "zip_code" : "78739",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.88703984499995",
+    "latitude" : "30.18304319400005",
+    "human_address" : "{\"address\":\"7400 Espira Drive\",\"city\":\"\",\"state\":\"\",\"zip\":\"78739\"}"
+  },
+  "description_of_dog" : "\"Charlie\" neutered male, black and white Labrador Retriever mix ",
+  "address" : "7400 Espira Drive ",
+  "last_name" : "Rafacz"
+}
+, {
+  "first_name" : "Valerie",
+  "zip_code" : "78723",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.67658821999999",
+    "latitude" : "30.288163703000066",
+    "human_address" : "{\"address\":\"4707 Carsonhill Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78723\"}"
+  },
+  "description_of_dog" : "“Sissy,” female, tan and black German Shepherd",
+  "address" : "4707 Carsonhill Dr",
+  "last_name" : "Raven"
+}
+, {
+  "first_name" : "Jim",
+  "zip_code" : "78732",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.89324600799995",
+    "latitude" : "30.41498729600005",
+    "human_address" : "{\"address\":\"14028 Lakeview Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78732\"}"
+  },
+  "description_of_dog" : "“Iko,” neutered male, Brown Brindle Catahoula  mix",
+  "address" : "14028 Lakeview Dr",
+  "last_name" : "Rehage"
+}
+, {
+  "first_name" : "Adrian Rivera-Clemente ",
+  "zip_code" : "78653",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.53009632799996",
+    "latitude" : "30.31698688000006",
+    "human_address" : "{\"address\":\"18300 Belfry Pass\",\"city\":\"\",\"state\":\"\",\"zip\":\"78653\"}"
+  },
+  "description_of_dog" : "“Diva,” intact female, tri-color Pit Bull",
+  "address" : "18300 Belfry Pass",
+  "last_name" : "Rivera-Clemente "
+}
+, {
+  "first_name" : "Kim",
+  "zip_code" : "78739",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.91933136399996",
+    "latitude" : "30.191546025000036",
+    "human_address" : "{\"address\":\"7916 Adelaide Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78739\"}"
+  },
+  "description_of_dog" : "\"Sydney\" spayed female, Tricolor/Black Beagle ",
+  "address" : "7916 Adelaide Dr ",
+  "last_name" : "Sadler"
+}
+, {
+  "first_name" : "Johy ",
+  "zip_code" : "78660",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.66004030099998",
+    "latitude" : "30.44785267800006",
+    "human_address" : "{\"address\":\"1512 Miss Allison Way\",\"city\":\"\",\"state\":\"\",\"zip\":\"78660\"}"
+  },
+  "description_of_dog" : "\"Precious\" female, tan Labrador Retriever mix ",
+  "address" : "1512 Miss Allison Way",
+  "last_name" : "Saha"
+}
+, {
+  "first_name" : "Ofelia",
+  "zip_code" : "78753",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.66532581799999",
+    "latitude" : "30.387622908000026",
+    "human_address" : "{\"address\":\"911 Peggotty Pl\",\"city\":\"\",\"state\":\"\",\"zip\":\"78753\"}"
+  },
+  "description_of_dog" : "“Smokey,” neutered, blue and white Pit Bull mix  ",
+  "address" : "911 Peggotty Pl",
+  "last_name" : "Segura"
+}
+, {
+  "first_name" : "Eligio",
+  "zip_code" : "78736",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.90835472799995",
+    "latitude" : "30.24972473400004",
+    "human_address" : "{\"address\":\"7005 Bright Star Ln\",\"city\":\"\",\"state\":\"\",\"zip\":\"78736\"}"
+  },
+  "description_of_dog" : "“Grey,” spayed female, black/white Queensland Heeler",
+  "address" : "7005 Bright Star Ln",
+  "last_name" : "Sparks"
+}
+, {
+  "first_name" : "Melissa",
+  "zip_code" : "78669",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-98.03610936499996",
+    "latitude" : "30.36883034400006",
+    "human_address" : "{\"address\":\"2815 Oak Ridge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78669\"}"
+  },
+  "description_of_dog" : "“Sparkles,” spayed female, Brindle Plott Hound mix",
+  "address" : "2815 Oak Ridge Dr",
+  "last_name" : "Spellmann"
+}
+, {
+  "first_name" : "Melissa",
+  "zip_code" : "78669",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-98.03610936499996",
+    "latitude" : "30.36883034400006",
+    "human_address" : "{\"address\":\"2815 Oak Ridge Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78669\"}"
+  },
+  "description_of_dog" : "“Lacy,” spayed female, Labrador Retriever Mix",
+  "address" : "2815 Oak Ridge Dr",
+  "last_name" : "Spellmann"
+}
+, {
+  "first_name" : "Ronald",
+  "zip_code" : "78741",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.72731166599999",
+    "latitude" : "30.219546473000037",
+    "human_address" : "{\"address\":\"4704 Sunridge Ct\",\"city\":\"\",\"state\":\"\",\"zip\":\"78741\"}"
+  },
+  "description_of_dog" : "“Rita,” female, brown Australian Shepherd  ",
+  "address" : "4704 Sunridge Ct",
+  "last_name" : "Vasey"
+}
+, {
+  "first_name" : "Carla",
+  "zip_code" : "78758",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.70205249599996",
+    "latitude" : "30.413084879000053",
+    "human_address" : "{\"address\":\"2305 Thornwild Pass\",\"city\":\"\",\"state\":\"\",\"zip\":\"78758\"}"
+  },
+  "description_of_dog" : "“Lincoln,” male, fawn and white Pit Bull Terrier",
+  "address" : "2305 Thornwild Pass",
+  "last_name" : "Ward"
+}
+, {
+  "first_name" : "Andrew ",
+  "zip_code" : "78757",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.74893192899998",
+    "latitude" : "30.347369095000033",
+    "human_address" : "{\"address\":\"6604 Jamaica Ct\",\"city\":\"\",\"state\":\"\",\"zip\":\"78757\"}"
+  },
+  "description_of_dog" : "\"Cleo\" female, black Labrador Retriever mix ",
+  "address" : "6604 Jamaica Ct",
+  "last_name" : "Willingham"
+}
+, {
+  "first_name" : "Carol",
+  "zip_code" : "78725",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.58797659599998",
+    "latitude" : "30.24017692700005",
+    "human_address" : "{\"address\":\"4008 Reeder Dr\",\"city\":\"\",\"state\":\"\",\"zip\":\"78725\"}"
+  },
+  "description_of_dog" : "\"Gucio\" male, black Giant Schnauzer ",
+  "address" : "4008 Reeder Dr",
+  "last_name" : "Winter "
+}
+, {
+  "first_name" : "Lorena",
+  "zip_code" : "78713",
+  "location" : {
+    "needs_recoding" : false,
+    "longitude" : "-97.74183845099998",
+    "latitude" : "30.285003093000057",
+    "human_address" : "{\"address\":\"3415 Sweetgum\",\"city\":\"Trc\",\"state\":\"\",\"zip\":\"78713\"}"
+  },
+  "description_of_dog" : "“Mulligan,” neutered male, Brindle Bullmastiff",
+  "address" : "3415 Sweetgum Trc",
+  "last_name" : "Zuniga"
+}
+ ]

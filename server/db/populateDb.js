@@ -7,6 +7,7 @@ var crimeArray = require('../data/crimes.js')
 var Restaurant = require('../models/restaurant.js')
 var RestaurantInspection = require('../models/restaurant_inspection.js')
 var Crime = require('../models/crime.js')
+var Dog = require('../models/dogs.js')
 
 //This function takes an address string, and returns an object that contains lat, lng, and street name
 var parseRestaurantAddress = function (addr){
