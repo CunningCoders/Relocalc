@@ -34,7 +34,49 @@ exports.view = function(ctrl, options) {
 
 function mapSetup(options, element, isInitialized) {
 
-  //we zoom in when a user does a search
+//we zoom in when a user does a search
+ var adjustZoom = function () {
+  if (options.location.address()) {
+    return 11;
+  }
+  else {
+    return 8;
+  }
+};
+//notice that the locations object has m.prop setters/getters which are from a virtual model
+var lat = options.location.lat() || 30.25;
+  var lng = options.location.lng() || -97.75;
+
+  console.log(lat, lng);
+  console.log(isInitialized);
+
+  var mapCenter = new google.maps.LatLng(lat, lng);
+  var mapOptions = {
+    center: new google.maps.LatLng(30.2500, -97.7500),
+    zoom: adjustZoom(),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  //Map styling
+  var map = new google.maps.Map(document.querySelector('.mapContainer'), mapOptions);
+
+  map.set('styles', [
+  {
+    "stylers": [
+      {
+        "hue": "#ff1a00"
+      },
+      {
+        "invert_lightness": true
+      },
+      {
+        "saturation": -100
+      },
+      {
+        "lightness": 40
+      },
+      {
+        "gamma": 0.5
       }
     ]
   },
@@ -55,25 +97,30 @@ function mapSetup(options, element, isInitialized) {
         }]
     }
   ]);
-    var workLat  = options.location.workLat();
-    var workLng  = options.location.workLng();
-    var mapCenter = new google.maps.LatLng(lat, lng);
-    var mapOptions = {
-      center: new google.maps.LatLng(30.2500, -97.7500),
-      zoom: adjustZoom(),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+
+  var workLat  = options.location.workLat();
+  var workLng  = options.location.workLng();
+  var mapCenter = new google.maps.LatLng(lat, lng);
+  var mapOptions = {
+    center: new google.maps.LatLng(30.2500, -97.7500),
+    zoom: adjustZoom(),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
   var myLatLng = new google.maps.LatLng(lat, lng);
 
   var marker = new google.maps.Marker({
-    //position: mapCenter,
     position: myLatLng,
     map: map,
-    icon: '/public/img//house2.png',
-    // icon: iconImg,
+    // icon: '/public/img//house2.png',
     title: options.location.address() || ''
   });
 
+  var workMarker = new google.maps.Marker({
+    position: new google.maps.LatLng(workLat, workLng),
+    map: map,
+    // icon: iconImg,
+    title: options.location.workAddress() || ''
+  });
 
   marker.setMap(map);
   google.maps.event.addListener(marker, 'click', toggleBounce);
