@@ -19,6 +19,8 @@ exports.controller = function (options) {
       //set values on vm
       options.location.lng(res.lng);
       options.location.lat(res.lat);
+      options.location.workLng(res.workLng)
+      options.location.workLat(res.workLat)
       //IMPORTANT: force a re-render so the graphs display with the new values!
       if (res !== null) {
         m.redraw();
