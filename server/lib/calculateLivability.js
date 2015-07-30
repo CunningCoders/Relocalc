@@ -29,7 +29,14 @@ var linEqHandler = function(data, tag){
         pnt1: {x: data.meanCrimesPerSqMi, y: data.meanCrimesPerSqMi},
         pnt2: {x: data.meanCrimesPerSqMi - 30, y: data.meanCrimesPerSqMi + 12},
         input: data.searchCrimesPerSqMi
-      };;
+      };
+      //case for dogs - added by BS
+  //   case 'dogs':
+  //     return {
+  //       pnt1: {x: data.meanDogsPerSqMi, y: data.meanDogsPerSqMi},
+  //       pnt2: {x: data.meanDogsPerSqMi - 30, y: data.meanDogsPerSqMi + 12},
+  //       input: data.searchDogsPerSqMi
+  //     };
   }
 }
 
@@ -63,7 +70,8 @@ var calculateScore = function(handler, weight){
 }
 
 module.exports = function attachStatsToHttpResponeBody(weights, httpResponseBody, radius){
-  httpResponseBody.searchCrimesPerSqMi = (httpResponseBody.crimes.length / (Math.PI * radius * radius));  
+  httpResponseBody.searchCrimesPerSqMi = (httpResponseBody.crimes.length / (Math.PI * radius * radius));
+  // httpResponseBody.searchDogsPerSqMi = (httpResponseBody.dogs.length / (Math.PI * radius * radius)); //added this - BS   
   httpResponseBody.livibility = _.reduce(scaleWeights(weights), function findPartialLivibility(score, val, key){
   	return score += calculateScore(linEqHandler(httpResponseBody, key), val/100)
 

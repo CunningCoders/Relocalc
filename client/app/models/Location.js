@@ -129,6 +129,7 @@ var modelData = function(data) {
     lng: Locations.lng(),
     restAvg: data.searchInspecAvg,
     crimeAvg: data.searchCrimesPerSqMi,
+    dogAvg: data.searchDogsPerSqMi, //added this - BS
     livability: data.livibility,
     cityRestAvg: data.meanRestInspecAvg,
     cityCrimeAvg: data.meanCrimesPerSqMi

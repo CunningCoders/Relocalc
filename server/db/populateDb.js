@@ -67,7 +67,6 @@ var insertCrime = function(data){
 }
 
 //insert table row using dangerous dog data - BS
-//FIX THIS
 
 var insertDog = function(data) { 
   return Dog.create({

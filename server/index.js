@@ -8,7 +8,7 @@ var Restaurant = require('./models/restaurant.js');
 var httpResponseBody = require('./lib/httpResponseBody.js');
 var calculateLivability = require('./lib/calculateLivability.js');
 
-//provide a browserified f;ile at a path
+//provide a browserified file at a path
 var shared = ['mithril'];
 app.get('/js/vendor-bundle.js', browserify(shared));
 app.get('/js/app-bundle.js', browserify('./client/app/index.js', { external: shared }));
@@ -67,6 +67,8 @@ app.post('/', function (req, res){
     res.json(httpResponseBody);
   });
 });
+
+//.then for http response body with dog data
 
 var port = process.env.PORT || 4000;
 app.listen(port);

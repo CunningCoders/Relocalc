@@ -51,7 +51,7 @@ exports.view = function (ctrl, options) {
                         ,{min: 0, max: 100, step: 1, value: Location.restWeight(), onchange: m.withAttr('value', Location.restWeight)}
                       )]
                     )]
-                )],
+                )], //added weight slider for dogs
                  [m('.col-sm-6',
                   [m('h4', 'Dangerous Dogs: ' + Location.dogWeight())],
                     [m('.slider',
