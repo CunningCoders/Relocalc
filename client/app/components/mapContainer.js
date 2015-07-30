@@ -112,14 +112,14 @@ var lat = options.location.lat() || 30.25;
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
-    // icon: 'client/public/img//house2.png',
+    icon: '/client/img/house',
     title: options.location.address() || ''
   });
 
   var workMarker = new google.maps.Marker({
     position: new google.maps.LatLng(workLat, workLng),
     map: map,
-    // icon: path.join(__dirname+'/../../public/img/office-building.png'),
+    icon: '/client/img/office-building',
     title: options.location.workAddress() || ''
   });
 
