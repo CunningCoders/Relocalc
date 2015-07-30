@@ -2,6 +2,7 @@
 
 var Restaurant = require('../models/restaurant.js')
 var Crime = require('../models/crime.js')
+var Dog = require('../models/dogs.js')
 var Promise = require('bluebird')
 var _ = require('underscore')
 var httpResponseBody = module.exports = {name: 'httpResponseBody'}
@@ -26,13 +27,19 @@ Restaurant.all()
 			return !inspecAvg ? httpResponseBody.meanRestInspecAvg : httpResponseBody.meanRestInspecAvg += inspecAvg ;
 		})
 	})
-	.then(function attachMeanRestInpecAvgToRespomse(restaurants){
+	.then(function attachMeanRestInpecAvgToResponse(restaurants){
 		httpResponseBody.meanRestInspecAvg /= len;
 	})
 })
 
 //calculates adjusted crimes per square mile of all crimes in database, and attaches them to httpResponseBody
 Crime.all()
-.then(function attachMeanCrimesPerSqMiToRespomse(crimes){
+.then(function attachMeanCrimesPerSqMiToResponse(crimes){
 	httpResponseBody.meanCrimesPerSqMi = crimes.length/_areaOfAustin * 4
+})
+
+//calculate dogs per square mile of all dogs in DB & attach them to httpResponseBody
+Dog.all()
+.then(function attachMeanDogsPerSqMiToResponse(dogs){
+	httpResponseBody.meanDogsPerSqMi = dogs.length/_areaOfAustin * 4
 })

@@ -38,6 +38,7 @@ var Locations = module.exports = {
   lng: m.prop(''),
   crimeWeight: m.prop(''),
   restWeight: m.prop(''),
+  dogWeight: m.prop(''), //dog weight for weight gauge?
   address: m.prop(''),
 
   postToFetchRestaurantData: function(address, cb) {
