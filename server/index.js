@@ -11,6 +11,7 @@ var Restaurant = require('./models/restaurant.js');
 var httpResponseBody = require('./lib/httpResponseBody.js');
 var calculateLivability = require('./lib/calculateLivability.js');
 var request = require('request-promise')
+var path = require('path')
 
 var shared = ['mithril'];
 app.get('/js/vendor-bundle.js', browserify(shared));
@@ -30,6 +31,15 @@ app.get('/', function (req, res){
 });
 
 //app.get('/crimes', function (req, res){});
+
+app.get('/client/img/office-building', function(req, res) {
+  res.sendFile(path.join(__dirname+'/../client/public/img/office-building.png'))
+})
+
+app.get('/client/img/house', function(req, res) {
+  res.sendFile(path.join(__dirname+'/../client/public/img/apartment-3.png'))
+})
+
 
 app.post('/distance', function(req, res){
   request('https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + 

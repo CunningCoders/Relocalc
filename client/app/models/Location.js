@@ -36,10 +36,13 @@ var Locations = module.exports = {
 
   lat: m.prop(''),
   lng: m.prop(''),
+  workLat: m.prop(''),
+  workLng: m.prop(''),
   crimeWeight: m.prop(''),
   restWeight: m.prop(''),
   commuteWeight: m.prop(''),
   address: m.prop(''),
+  workAddress: m.prop(''),
   commuteTime: m.prop(''),
   costWeight: m.prop(''),
   zillowIncomeNeighborhood: m.prop(0),
@@ -48,34 +51,43 @@ var Locations = module.exports = {
   postToFetchRestaurantData: function(address, workAddress, callback) {
     Locations.address(address);
     var callback = callback;
-    this.postToFetchGeoCode(address, function (res) {
-      Locations.lat(res.results[0].geometry.location.lat);
-      Locations.lng(res.results[0].geometry.location.lng);
-      var locationData = {
-        "address": address,
-        "workAddress" : workAddress,
-        "lat": res.results[0].geometry.location.lat,
-        "lng": res.results[0].geometry.location.lng,
-        "radius": 1,
-        "weights": {
-          "crimes": Locations.crimeWeight() || 50,
-          "restaurants": Locations.restWeight() || 50,
-          "commute" : workAddress !== '' ? Locations.commuteWeight() || 50 : 0,
-          "affordability": Locations.costWeight() || 50,
-        }
-      };
-      return m.request({method: "POST", url: "", 'Content-Type': 'application/json', data: locationData})
-        .then(function(res) {
-          var data = modelData(res);
-          if (data !== null) {
-            Locations.search(data);
-            Locations.zillowIncomeNeighborhood(data.zillow.neighborhood.medianIncomeNeighborhood);
-            Locations.zillowIncomeCity(data.zillow.neighborhood.medianIncomeCity);
+    Locations.postToFetchGeoCode(workAddress, function (res) {
+      if (res.status === 'OK'){
+        Locations.workLat(res.results[0].geometry.location.lat);
+        Locations.workLng(res.results[0].geometry.location.lng);
+      }
+      console.log('work coord' + Locations.workLat(), Locations.workLng())
+      Locations.postToFetchGeoCode(address, function (res) {
+        Locations.lat(res.results[0].geometry.location.lat);
+        Locations.lng(res.results[0].geometry.location.lng);
+        var locationData = {
+          "address": address,
+          "workAddress" : workAddress,
+          "lat": res.results[0].geometry.location.lat,
+          "lng": res.results[0].geometry.location.lng,
+          "workLat": Locations.workLat(),
+          "workLng": Locations.workLng(),
+          "radius": 1,
+          "weights": {
+            "crimes": Locations.crimeWeight() || 50,
+            "restaurants": Locations.restWeight() || 50,
+            "commute" : workAddress !== '' ? Locations.commuteWeight() || 50 : 0,
+            "affordability": Locations.costWeight() || 50,
           }
-            Locations.saveSearch(Locations.address(), res.livibility);
-            return callback(data);
-        })
-    });
+        };
+        return m.request({method: "POST", url: "", 'Content-Type': 'application/json', data: locationData})
+          .then(function(res) {
+            var data = modelData(res);
+            if (data !== null) {
+              Locations.search(data);
+              Locations.zillowIncomeNeighborhood(data.zillow.neighborhood.medianIncomeNeighborhood);
+              Locations.zillowIncomeCity(data.zillow.neighborhood.medianIncomeCity);
+            }
+              Locations.saveSearch(Locations.address(), res.livibility);
+              return callback(data);
+          })
+      });
+    })
   },
 
   saveSearch: function(address, livabilityScore){
@@ -103,9 +115,10 @@ var Locations = module.exports = {
       lat: m.prop(''),
       lng: m.prop(''),
       workAddress: m.prop(''),
+      workLat: m.prop(''),
+      workLng: m.prop('')
     }
   }
-
 };
 
 /**
@@ -132,12 +145,13 @@ var modelData = function(data) {
   }, 0);
 
   var avg = sum / inspectCount;
-
   var response = {
     crimes: data.crimes.length,
     restaurants: data.restaurants.length,
     lat: Locations.lat(),
     lng: Locations.lng(),
+    workLat: Locations.workLat(),
+    workLng: Locations.workLng(),
     restAvg: data.searchInspecAvg,
     crimeAvg: data.searchCrimesPerSqMi,
     livability: data.livibility,
