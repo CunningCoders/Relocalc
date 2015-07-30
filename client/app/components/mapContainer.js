@@ -1,5 +1,6 @@
 var m = require('mithril');
 var Location = require('../models/location');
+var path = require('path')
 //var loaderView = require('./loader').loader;
 
 /**
@@ -111,14 +112,14 @@ var lat = options.location.lat() || 30.25;
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
-    // icon: '/public/img//house2.png',
+    // icon: 'client/public/img//house2.png',
     title: options.location.address() || ''
   });
 
   var workMarker = new google.maps.Marker({
     position: new google.maps.LatLng(workLat, workLng),
     map: map,
-    // icon: iconImg,
+    // icon: path.join(__dirname+'/../../public/img/office-building.png'),
     title: options.location.workAddress() || ''
   });
 
