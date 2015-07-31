@@ -1,7 +1,7 @@
 var m = require('mithril');
 var Location = require('../models/Location');
 var Relocalc = require('../index');
-// var swal = require('sweetAlert');
+var swal = require('sweetAlert');
 
 exports.controller = function (options) {
   ctrl = this;
