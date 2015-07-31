@@ -34,7 +34,7 @@ input[type="range"] {
   display: block;
 }
 
-.resultsHeadline {
+#resultsHeadline {
   text-align: center;
   font-size: 36px;
   color: white;
@@ -81,11 +81,22 @@ h3, h4 {
 
 .row {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 90px;
 }
 
 .col-sm-4 {
   border-radius: 10px;
 }
 
+.container-fluid {
+  width: 1200px;
+}
+.navbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
+#userInput {
+}
 /* END general styling */

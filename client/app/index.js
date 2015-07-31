@@ -26,10 +26,10 @@ Relocalc.view = function (ctrl) {
   return m('div',
           [m('.row', [ m.component(SigninBox) ]),
            m('.row .headline', 'Relocalc'),
-           m('.row', [ m.component(SearchBox, { location: ctrl.location }) ]),
-           m('.resultsHeadline', 'Your Results'),
+           m('#userInput.row', [ m.component(SearchBox, { location: ctrl.location }) ]),
+           m('#resultsHeadline', 'Your Results'),
            m('.row', [ m.component(Map, { location: ctrl.location }), m.component(Gauge) ]),
-           m('.row', [ m.component(Graphs) ])    
+           m('.row', [ m.component(Graphs) ])
           ])
 }
 
