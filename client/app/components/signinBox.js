@@ -19,7 +19,7 @@ header.controller = function (options) {
           toastr["error"](error);
           //ctrl.error(error);
         } else {
-          console.log("failed");
+          console.log("Log in failed");
         }
       });
   };

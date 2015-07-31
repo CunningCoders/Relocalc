@@ -44,3 +44,7 @@ junit*.properties
 
 ### database info
 server/lib/restaurants.js
+APIKeys.js
+
+### Zillow API key
+server/lib/credentials.js

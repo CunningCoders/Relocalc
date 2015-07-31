@@ -8,10 +8,14 @@ exports.controller = function (options) {
    * this function in Location.js model; makes a post request to GoogleAPI for coordinates for the address, which are
    * then used for a post request to our database for the data for radius around location
    */
+  ctrl.fetchData = function() {
+    ctrl.fetchGeoCode()
+  }
 
   ctrl.fetchGeoCode = function() {
     var address = options.location.address();
-    return Location.postToFetchRestaurantData(address, function cb(res) {
+    var workAddress = options.location.workAddress();
+    return Location.postToFetchRestaurantData(address, workAddress, function cb(res) {
       //set values on vm
       options.location.lng(res.lng);
       options.location.lat(res.lat);
@@ -19,7 +23,7 @@ exports.controller = function (options) {
       if (res !== null) {
         m.redraw();
         toastr["success"]("Data successfully loaded for " + address);
-      }
+      };
     });
   };
 };
@@ -35,6 +39,11 @@ exports.view = function (ctrl, options) {
                 //this could be refactored to to use m.withAttr to set the values...
               onchange: function(e){ options.location.address(e.currentTarget.value); }}
             )],
+              [m('input.addressInput.workAddress[type="text"][placeholder="Enter your work address (1100 Congress Avenue, Austin, TX 78701)"]',
+                {value: options.location.workAddress(),
+                  //this could be refactored to to use m.withAttr to set the values...
+                onchange: function(e){ options.location.workAddress(e.currentTarget.value); }}
+            )],
             [m('h3',  "On a scale of 0-100, how important are these criteria in your search?")],
                 [m('.col-sm-6',
                   [m('h4', 'Crime Rate: ' + Location.crimeWeight())],
@@ -49,6 +58,22 @@ exports.view = function (ctrl, options) {
                     [m('.slider',
                       [m('input[type="range"]'
                         ,{min: 0, max: 100, step: 1, value: Location.restWeight(), onchange: m.withAttr('value', Location.restWeight)}
+                      )]
+                    )]
+                )],              
+                [m('.col-sm-6',
+                  [m('h4', 'Commute Time: ' + Location.commuteWeight())],
+                    [m('.slider',
+                      [m('input[type="range"]'
+                        ,{min: 0, max: 100, step: 1, value: Location.commuteWeight(), onchange: m.withAttr('value', Location.commuteWeight)}
+                      )]
+                    )]
+                )],
+                [m('.col-sm-6',
+                  [m('h4', 'Affordability: ' + Location.costWeight())],
+                    [m('.slider',
+                      [m('input[type="range"]'
+                        ,{min: 0, max: 100, step: 1, value: Location.costWeight(), onchange: m.withAttr('value', Location.costWeight)}
                       )]
                     )]
                 )],

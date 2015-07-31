@@ -7,7 +7,7 @@ var Restaurant = require('../models/restaurant.js');
 var Promise = require('bluebird');
 var geolib = require('geolib')
 
-//ffunction allows search to be called on multiple tables
+//function allows search to be called on multiple tables
 //returns an object containing appropratie functions for given model name
 var handler = function (modelName){
   switch(modelName){
@@ -55,7 +55,7 @@ var reduceRestaurants = function (restaurants, circle){
   	return geolib.isPointInCircle(restCoords, circle, circle.meters);
   })
   
-  //take that list from promsie, then map that list to a new list (change is described in nex comment)
+  //take that list from promise, then map that list to a new list (change is described in nex comment)
   .then(function (stored){
   	return Promise.map(stored, function findRestaurantInspections(rest){
   		

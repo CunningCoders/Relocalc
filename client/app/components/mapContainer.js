@@ -35,37 +35,98 @@ exports.view = function(ctrl, options) {
 function mapSetup(options, element, isInitialized) {
 
   //we zoom in when a user does a search
-    var adjustZoom = function () {
-      if (options.location.address()) {
-        return 16;
-      }
-      else {
-        return 8;
-      }
-    };
-    //notice that the locations object has m.prop setters/getters which are from a virtual model
-    var lat = options.location.lat() || 30.25;
-    var lng = options.location.lng() || -97.75;
+  var adjustZoom = function () {
+    if (options.location.address()) {
+      return 11;
+    }
+    else {
+      return 8;
+    }
+  };
+  //notice that the locations object has m.prop setters/getters which are from a virtual model
+  var lat = options.location.lat() || 30.25;
+  var lng = options.location.lng() || -97.75;
 
-    console.log(lat, lng);
-    console.log(isInitialized);
+  console.log(lat, lng);
+  console.log(isInitialized);
+
+  var mapCenter = new google.maps.LatLng(lat, lng);
+  var mapOptions = {
+    center: new google.maps.LatLng(30.2500, -97.7500),
+    zoom: adjustZoom(),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  //Map styling
+  var map = new google.maps.Map(document.querySelector('.mapContainer'), mapOptions);
+
+  map.set('styles', [
+  {
+    "stylers": [
+      {
+        "hue": "#ff1a00"
+      },
+      {
+        "invert_lightness": true
+      },
+      {
+        "saturation": -100
+      },
+      {
+        "lightness": 40
+      },
+      {
+        "gamma": 0.5
+      }
+    ]
+  },
+    {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#435359"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape",
+      "stylers": [
+        {
+          "color": "#2A373C"
+        }]
+    }
+  ]);
 
     var mapCenter = new google.maps.LatLng(lat, lng);
     var mapOptions = {
-      center: mapCenter,
-      zoom: adjustZoom()
+      center: new google.maps.LatLng(30.2500, -97.7500),
+      zoom: adjustZoom(),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+  var myLatLng = new google.maps.LatLng(lat, lng);
 
-    var map = new google.maps.Map(document.querySelector('.mapContainer'), mapOptions);
+  var marker = new google.maps.Marker({
+    //position: mapCenter,
+    position: myLatLng,
+    map: map,
+    icon: '/public/img//house2.png',
+    // icon: iconImg,
+    title: options.location.address() || ''
+  });
 
-    var iconImg = '../img/icon.png';
 
-    var marker = new google.maps.Marker({
-      position: mapCenter,
-      map: map,
-      // icon: iconImg,
-      title: options.location.address() || ''
-    });
+  marker.setMap(map);
+  google.maps.event.addListener(marker, 'click', toggleBounce);
 
-    marker.setMap(map);
+
+  function toggleBounce() {
+
+    if (marker.getAnimation() != null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
+
 }

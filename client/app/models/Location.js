@@ -38,36 +38,42 @@ var Locations = module.exports = {
   lng: m.prop(''),
   crimeWeight: m.prop(''),
   restWeight: m.prop(''),
+  commuteWeight: m.prop(''),
   address: m.prop(''),
+  commuteTime: m.prop(''),
+  costWeight: m.prop(''),
+  zillowIncomeNeighborhood: m.prop(0),
+  zillowIncomeCity: m.prop(0),
 
-  postToFetchRestaurantData: function(address, cb) {
+  postToFetchRestaurantData: function(address, workAddress, callback) {
     Locations.address(address);
-    var cb = cb;
+    var callback = callback;
     this.postToFetchGeoCode(address, function (res) {
-      console.log("google", res);
       Locations.lat(res.results[0].geometry.location.lat);
       Locations.lng(res.results[0].geometry.location.lng);
       var locationData = {
         "address": address,
+        "workAddress" : workAddress,
         "lat": res.results[0].geometry.location.lat,
         "lng": res.results[0].geometry.location.lng,
         "radius": 1,
         "weights": {
           "crimes": Locations.crimeWeight() || 50,
-          "restaurants": Locations.restWeight() || 50
+          "restaurants": Locations.restWeight() || 50,
+          "commute" : workAddress !== '' ? Locations.commuteWeight() || 50 : 0,
+          "affordability": Locations.costWeight() || 50,
         }
       };
-      console.log(locationData);
       return m.request({method: "POST", url: "", 'Content-Type': 'application/json', data: locationData})
         .then(function(res) {
-          console.log(res);
-          console.log(Object.keys(res));
           var data = modelData(res);
           if (data !== null) {
             Locations.search(data);
+            Locations.zillowIncomeNeighborhood(data.zillow.neighborhood.medianIncomeNeighborhood);
+            Locations.zillowIncomeCity(data.zillow.neighborhood.medianIncomeCity);
           }
             Locations.saveSearch(Locations.address(), res.livibility);
-            return cb(data);
+            return callback(data);
         })
     });
   },
@@ -95,7 +101,8 @@ var Locations = module.exports = {
     return {
       address: m.prop(''),
       lat: m.prop(''),
-      lng: m.prop('')
+      lng: m.prop(''),
+      workAddress: m.prop(''),
     }
   }
 
@@ -110,6 +117,11 @@ var Locations = module.exports = {
 var modelData = function(data) {
   //Separate data into variables
   var inspectCount = 0;   
+
+  var commuteData = JSON.parse(data.distance)
+  if (commuteData.status === 'OK'){
+    Locations.commuteTime(Math.round(JSON.parse(data.distance).rows[0].elements[0].duration.value/60))
+  }
 
   var sum = data.restaurants.reduce(function(tot, rest){
     if(rest.avg) {
@@ -130,7 +142,8 @@ var modelData = function(data) {
     crimeAvg: data.searchCrimesPerSqMi,
     livability: data.livibility,
     cityRestAvg: data.meanRestInspecAvg,
-    cityCrimeAvg: data.meanCrimesPerSqMi
+    cityCrimeAvg: data.meanCrimesPerSqMi,
+    zillow: data.zillowData
   };
 
   if(isNaN(response.restAvg)) {

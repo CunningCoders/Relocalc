@@ -21,15 +21,37 @@ var linEqHandler = function(data, tag){
     case 'restaurants':
       return {
         pnt1: {x: data.meanRestInspecAvg, y: 80},
-        pnt2: {x: data.meanRestInspecAvg + 5, y: 100},
+        pnt2: {x: data.meanRestInspecAvg + 5, y: 100}, // For every change of 5 in a health inspection score, the restaurant livability portion changes by 20
         input: data.searchInspecAvg
       };
     case 'crimes':
       return {
         pnt1: {x: data.meanCrimesPerSqMi, y: data.meanCrimesPerSqMi},
-        pnt2: {x: data.meanCrimesPerSqMi - 30, y: data.meanCrimesPerSqMi + 12},
+        pnt2: {x: data.meanCrimesPerSqMi - 30, y: data.meanCrimesPerSqMi + 12}, // For every change of 30 in crimes/sq mi, the crimes livability portion changes by 12
         input: data.searchCrimesPerSqMi
-      };;
+      };
+    case 'commute':
+      //Average and lowest average commute based on zipatlas.com
+      var commute = JSON.parse(data.distance)
+      if (commute.status === "INVALID_REQUEST") {
+        return {
+           pnt1: {x: 24.6, y: 80}, 
+           pnt2: {x: 16.1, y:100},
+           input: 24.6
+        }
+     }
+      var input = commute.rows[0].elements[0].duration.value/60
+      return {
+       pnt1: {x: 24.6, y: 80}, 
+       pnt2: {x: 16.1, y:100},
+       input: input
+      }
+    case 'affordability':
+      return {
+        pnt1: {x: data.zillowData.neighborhood.medianIncomeCity/1000, y: 75},
+        pnt2: {x: (data.zillowData.neighborhood.medianIncomeCity*0.5)/1000, y: 100}, // For every change of 10% in income vs city average, the affordability livability portion changes by 2.5
+        input: data.zillowData.neighborhood.medianIncomeNeighborhood/1000
+    };
   }
 }
 
@@ -62,10 +84,10 @@ var calculateScore = function(handler, weight){
     score > 100 ? weight * 100 : score * weight
 }
 
-module.exports = function attachStatsToHttpResponeBody(weights, httpResponseBody, radius){
-  httpResponseBody.searchCrimesPerSqMi = (httpResponseBody.crimes.length / (Math.PI * radius * radius));  
-  httpResponseBody.livibility = _.reduce(scaleWeights(weights), function findPartialLivibility(score, val, key){
+module.exports = 
+  function attachStatsToHttpResponeBody(weights, httpResponseBody, radius){
+    httpResponseBody.searchCrimesPerSqMi = (httpResponseBody.crimes.length / (Math.PI * radius * radius));  
+    httpResponseBody.livibility = _.reduce(scaleWeights(weights), function findPartialLivibility(score, val, key){
   	return score += calculateScore(linEqHandler(httpResponseBody, key), val/100)
-
   }, 0);
 }

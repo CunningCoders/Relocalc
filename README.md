@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/CunningCoders/Relocalc.png?label=ready&title=Ready)](https://waffle.io/CunningCoders/Relocalc)
 # Relocalc
 
 A resource for residents or businesses looking to move to Austin, TX. 

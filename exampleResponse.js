@@ -3,7 +3,8 @@ Post({
   "address": "3308 Webberville/Bedford, Austin, TX 78702",
     "lat":"30.269527",
     "lng":"-97.70707990099999",
-    "radius": 1
+    "radius": 1,
+    "weights": {"restaurants": 46, "crimes": 34}
   
   })
 //single object that will be sent to client
