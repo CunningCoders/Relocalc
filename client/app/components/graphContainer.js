@@ -173,7 +173,7 @@ exports.controller = function(options) {
     //Initialize restaurant safety chart
     $(function () { 
       var userData = Math.floor(Location.commuteTime())
-      var averageData = Math.floor(24.6)
+      var averageData = userData > 0 ? 24.6 : 0;
       var colors;
       if (userData > averageData*1.2) {
         colors = ['#DF5353', '#434348']
@@ -201,10 +201,10 @@ exports.controller = function(options) {
         },
         series: [{
           name: 'Your Search',
-          data: [Location.commuteTime()]
+          data: [userData]
         }, {
           name: 'City of Austin (average)',
-          data: [24.6]
+          data: [averageData]
         }],
          tooltip: {
           useHTML: true,

@@ -47,6 +47,11 @@ function mapSetup(options, element, isInitialized) {
   //notice that the locations object has m.prop setters/getters which are from a virtual model
   var lat = options.location.lat() || 30.25;
   var lng = options.location.lng() || -97.75;
+  var workLat  = options.location.workLat() || 30.25;
+  var workLng  = options.location.workLng() || -97.75;
+
+  var myLatLng = new google.maps.LatLng(lat, lng);
+  var workLatLng = new google.maps.LatLng(workLat, workLng)
 
   console.log(lat, lng);
   console.log(isInitialized);
@@ -57,18 +62,6 @@ function mapSetup(options, element, isInitialized) {
     zoom: adjustZoom(),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-
-  var workLat  = options.location.workLat() || 30.25;;
-  var workLng  = options.location.workLng() || -97.75;
-  var mapCenter = new google.maps.LatLng(lat, lng);
-  var mapOptions = {
-    center: new google.maps.LatLng(30.2500, -97.7500),
-    zoom: adjustZoom(),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-
-  var myLatLng = new google.maps.LatLng(lat, lng);
-  var workLatLng = new google.maps.LatLng(workLat, workLng)
 
   var marker = new google.maps.Marker({
     position: myLatLng,
@@ -90,23 +83,26 @@ function mapSetup(options, element, isInitialized) {
   marker.setMap(map);
   workMarker.setMap(map);
 
-  var directionsDisplay = new google.maps.DirectionsRenderer({
-    suppressMarkers: true,
-    draggable: true
-  });
-  var directionsService = new google.maps.DirectionsService()
-  var request = {
-    origin: myLatLng,
-    destination: workLatLng,
-    travelMode: google.maps.TravelMode.DRIVING,
-    avoidTolls: true
-  };
-  directionsService.route(request, function(res, status){
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setMap(map);
-      directionsDisplay.setDirections(res);
-    }
-  });
+  //Adds route from home to work
+  if (options.location.workAddress() !== '') {
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      suppressMarkers: true,
+      draggable: true
+    });
+    var directionsService = new google.maps.DirectionsService()
+    var request = {
+      origin: myLatLng,
+      destination: workLatLng,
+      travelMode: google.maps.TravelMode.DRIVING,
+      avoidTolls: true
+    };
+    directionsService.route(request, function(res, status){
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setMap(map);
+        directionsDisplay.setDirections(res);
+      }
+    });
+  }
 
 
   //Map styling
