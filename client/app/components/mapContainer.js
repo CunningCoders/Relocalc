@@ -1,6 +1,7 @@
 var m = require('mithril');
 var Location = require('../models/location');
 var path = require('path')
+var mapStyle = require('../../public/mapStyle.css');
 //var loaderView = require('./loader').loader;
 
 /**
@@ -38,10 +39,10 @@ function mapSetup(options, element, isInitialized) {
   //we zoom in when a user does a search
   var adjustZoom = function () {
     if (options.location.address()) {
-      return 11;
+      return 15;
     }
     else {
-      return 8;
+      return 13;
     }
   };
   //notice that the locations object has m.prop setters/getters which are from a virtual model
@@ -51,14 +52,9 @@ function mapSetup(options, element, isInitialized) {
   console.log(lat, lng);
   console.log(isInitialized);
 
-  var mapCenter = new google.maps.LatLng(lat, lng);
-  var mapOptions = {
-    center: new google.maps.LatLng(30.2500, -97.7500),
-    zoom: adjustZoom(),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+  //var mapCenter = new google.maps.LatLng(lat, lng);
 
-  var workLat  = options.location.workLat() || 30.25;;
+  var workLat  = options.location.workLat() || 30.26;
   var workLng  = options.location.workLng() || -97.75;
   var mapCenter = new google.maps.LatLng(lat, lng);
   var mapOptions = {
@@ -66,6 +62,7 @@ function mapSetup(options, element, isInitialized) {
     zoom: adjustZoom(),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+
 
   var myLatLng = new google.maps.LatLng(lat, lng);
   var workLatLng = new google.maps.LatLng(workLat, workLng)
@@ -108,58 +105,60 @@ function mapSetup(options, element, isInitialized) {
     }
   });
 
-
+  map.set('styles', mapStyle);
   //Map styling
+  //Dark Style
+  // map.set('styles', [
+  // {
+  //   "stylers": [
+  //     {
+  //       "hue": "orange"
+  //     },
+  //     {
+  //       "invert_lightness": true
+  //     },
+  //     {
+  //       "saturation": -100
+  //     },
+  //     {
+  //       "lightness": 40
+  //     },
+  //     {
+  //       "gamma": 0.5
+  //     }
+  //   ]
+  // },
+  //   {
+  //     "featureType": "water",
+  //     "elementType": "geometry",
+  //     "stylers": [
+  //       {
+  //         "color": "#435359"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     "featureType": "landscape",
+  //     "stylers": [
+  //       {
+  //         "color": "#2A373C"
+  //       }]
+  //   }
+  // ]);
 
-  map.set('styles', [
-  {
-    "stylers": [
-      {
-        "hue": "#ff1a00"
-      },
-      {
-        "invert_lightness": true
-      },
-      {
-        "saturation": -100
-      },
-      {
-        "lightness": 40
-      },
-      {
-        "gamma": 0.5
-      }
-    ]
-  },
-    {
-      "featureType": "water",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#435359"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape",
-      "stylers": [
-        {
-          "color": "#2A373C"
-        }]
-    }
-  ]);
+
     var workLat  = options.location.workLat();
     var workLng  = options.location.workLng();
 
-  google.maps.event.addListener(marker, 'click', toggleBounce);
+  // google.maps.event.addListener(marker, 'click', toggleBounce);
 
 
-  function toggleBounce() {
+  // function toggleBounce() {
 
-    if (marker.getAnimation() != null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
-  }
+  //   if (marker.getAnimation() != null) {
+  //     marker.setAnimation(null);
+  //   } else {
+  //     marker.setAnimation(google.maps.Animation.BOUNCE);
+  //   }
+  // }
 }
