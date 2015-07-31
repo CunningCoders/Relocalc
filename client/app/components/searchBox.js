@@ -128,10 +128,9 @@ function scrollDown (element, init, context){
   console.log(target)
 
     if( target.context ) {
-        event.preventDefault();
         $('html, body').animate({
             scrollTop: target.offset().top - 100
-        }, 1000);
+        }, 4000);
     }
 });
 
