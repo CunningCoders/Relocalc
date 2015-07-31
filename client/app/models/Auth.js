@@ -1,6 +1,6 @@
 var m = require('mithril');
 var host = "localhost:4000";
-var fb = 'https://craply.firebaseio.com/';
+var fb = 'https://livability.firebaseio.com/';
 var ref = new Firebase(fb);
 
 /**
@@ -18,8 +18,10 @@ window.checkUser = function() {
 
 // onAuth is a Firebase method that triggers if there is a change in the status of the authentication status
 
+
+
 ref.onAuth(function(authData) {
-  if(authData) {
+  if (authData) {
     console.log("Authentication state update (+)" + authData);
     return LoggedIn.userID = authData.uid;
   }
@@ -42,10 +44,10 @@ var Auth = module.exports = {
    * @returns {userData}
    */
 
-  createUserAndLogin: function(email, password, cb){
+  createUserAndLogin: function(email, password, cb) {
     return ref.createUser({
-      email    : email,
-      password : password
+      email: email,
+      password: password
     }, function(error, userData) {
       if (error) {
         //Toastr is a nice flash messaging plugin
@@ -72,12 +74,9 @@ var Auth = module.exports = {
    * @returns {userID}
    */
 
-  signIn: function(email, password, cb){
+  signIn: function(cb) {
     var loggedIn = null;
-    return ref.authWithPassword({
-      'email'    : email,
-      'password' : password
-    }, function(error, authData) {
+    return ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
         cb(null, error, null);
@@ -86,6 +85,8 @@ var Auth = module.exports = {
         LoggedIn.userID = authData.uid;
         cb(LoggedIn.userID, error, authData.uid);
       }
+    }, {
+      remember: "sessionOnly"
     });
   },
 

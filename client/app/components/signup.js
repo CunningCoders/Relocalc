@@ -100,4 +100,3 @@ function errorView(ctrl) {
     ]) : null
   ]
 }
-

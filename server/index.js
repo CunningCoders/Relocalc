@@ -11,6 +11,7 @@ var Restaurant = require('./models/restaurant.js');
 var httpResponseBody = require('./lib/httpResponseBody.js');
 var calculateLivability = require('./lib/calculateLivability.js');
 var request = require('request-promise')
+var path = require('path')
 
 var shared = ['mithril'];
 app.get('/js/vendor-bundle.js', browserify(shared));
@@ -31,14 +32,25 @@ app.get('/', function (req, res){
 
 //app.get('/crimes', function (req, res){});
 
+app.get('/client/img/office-building', function(req, res) {
+  res.sendFile(path.join(__dirname+'/../client/public/img/office-building.png'))
+})
+
+app.get('/client/img/house', function(req, res) {
+  res.sendFile(path.join(__dirname+'/../client/public/img/apartment-3.png'))
+})
+
+
 app.post('/distance', function(req, res){
-  request('https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + 
-  req.body.address+'&destinations='+req.body.workAddress+'&arrival_time=1438610400&key='+ 
+  request('https://maps.googleapis.com/maps/api/distancematrix/json?origins=' +
+  req.body.address+'&destinations='+req.body.workAddress+'&arrival_time=1438610400&key='+
   credentials.GoogleDistance, function(error, response, body) {
     if (error) throw error;
     res.send(body)
   })
 })
+
+app.post
 
 //Init objects for use in Zillow API calls.
 var houseData = {};
@@ -88,8 +100,8 @@ app.post('/', function (req, res){
     return httpResponseBody;
   })
   .then(function attachCommuteTime(httpResponseBody) {
-    request('https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + 
-     req.body.address+'&destinations='+req.body.workAddress+'&arrival_time=1438610400&key='+ 
+    request('https://maps.googleapis.com/maps/api/distancematrix/json?origins=' +
+     req.body.address+'&destinations='+req.body.workAddress+'&arrival_time=1438610400&key='+
      credentials.GoogleDistance, function(error, response, body) {
       if (error) throw error;
       httpResponseBody.distance = body;
@@ -120,7 +132,7 @@ app.post('/', function (req, res){
             }
           })
         }
-        return neighborhoodOptions 
+        return neighborhoodOptions
       })
       // Get the neighborhood information for the requested address
       .then(function(result){
@@ -138,22 +150,22 @@ app.post('/', function (req, res){
               //Property Taxes for neighborhood and Austin average
               houseData.neighborhood.propTaxNeighborhood = result['Demographics:demographics']['response'][0]['pages'][0]['page'][0]['tables'][0]['table'][0]['data'][0]['attribute'][13]['values'][0]['neighborhood'][0]['value'][0]['_']-0 // Using '-0' to implicitly convert the string value to a number
               houseData.neighborhood.propTaxCity = result['Demographics:demographics']['response'][0]['pages'][0]['page'][0]['tables'][0]['table'][0]['data'][0]['attribute'][13]['values'][0]['city'][0]['value'][0]['_']-0
-            
+
               //Median House Size for neighborhood and Austin average
               houseData.neighborhood.houseSizeNeighborhood = result['Demographics:demographics']['response'][0]['pages'][0]['page'][1]['tables'][0]['table'][0]['data'][0]['attribute'][2]['values'][0]['neighborhood'][0]['value'][0]-0 // Using '-0' to implicitly convert the string value to a number
-              houseData.neighborhood.houseSizeCity = result['Demographics:demographics']['response'][0]['pages'][0]['page'][1]['tables'][0]['table'][0]['data'][0]['attribute'][2]['values'][0]['city'][0]['value'][0]-0 
-              
+              houseData.neighborhood.houseSizeCity = result['Demographics:demographics']['response'][0]['pages'][0]['page'][1]['tables'][0]['table'][0]['data'][0]['attribute'][2]['values'][0]['city'][0]['value'][0]-0
+
               //Median Household Income for neighborhood and Austin average
               houseData.neighborhood.medianIncomeNeighborhood = Math.floor(result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][0]['values'][0]['neighborhood'][0]['value'][0]['_'])
               houseData.neighborhood.medianIncomeCity = Math.floor(result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][0]['values'][0]['city'][0]['value'][0]['_'])
-              
+
               //Median Age for neighborhood and Austin average
               houseData.neighborhood.medianAgeNeighborhood = result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][3]['values'][0]['neighborhood'][0]['value'][0]-0 // Using '-0' to implicitly convert the string value to a number
               houseData.neighborhood.medianAgeCity = result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][3]['values'][0]['city'][0]['value'][0]-0
 
               //% of households with kids for neighborhood and Austin average
               houseData.neighborhood.percentWithKidsNeighborhood = (result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][4]['values'][0]['neighborhood'][0]['value'][0]['_']*100).toFixed(3)-0 //Convert decimal to percentage with 3 decimal places
-              houseData.neighborhood.percentWithKidsCity = (result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][4]['values'][0]['city'][0]['value'][0]['_']*100).toFixed(3)-0 
+              houseData.neighborhood.percentWithKidsCity = (result['Demographics:demographics']['response'][0]['pages'][0]['page'][2]['tables'][0]['table'][0]['data'][0]['attribute'][4]['values'][0]['city'][0]['value'][0]['_']*100).toFixed(3)-0
             }
             // Attach Zillow data to response
             httpResponseBody.zillowData = houseData
@@ -176,4 +188,3 @@ app.post('/', function (req, res){
 var port = process.env.PORT || 4000;
 app.listen(port);
 console.log("Listening on port", port);
-

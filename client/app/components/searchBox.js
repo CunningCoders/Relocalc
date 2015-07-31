@@ -1,6 +1,7 @@
 var m = require('mithril');
 var Location = require('../models/Location');
 var Relocalc = require('../index');
+// var swal = require('sweetAlert');
 
 exports.controller = function (options) {
   ctrl = this;
@@ -15,10 +16,17 @@ exports.controller = function (options) {
   ctrl.fetchGeoCode = function() {
     var address = options.location.address();
     var workAddress = options.location.workAddress();
+    if(!address || !workAddress){
+      //console.log("null val");
+      swal("Hey you!", "Don't forget to enter both address fields!", "error");
+    } else {console.log("address: ", address);}
+
     return Location.postToFetchRestaurantData(address, workAddress, function cb(res) {
       //set values on vm
       options.location.lng(res.lng);
       options.location.lat(res.lat);
+      options.location.workLng(res.workLng)
+      options.location.workLat(res.workLat)
       //IMPORTANT: force a re-render so the graphs display with the new values!
       if (res !== null) {
         m.redraw();
@@ -60,7 +68,7 @@ exports.view = function (ctrl, options) {
                         ,{min: 0, max: 100, step: 1, value: Location.restWeight(), onchange: m.withAttr('value', Location.restWeight)}
                       )]
                     )]
-                )],              
+                )],
                 [m('.col-sm-6',
                   [m('h4', 'Commute Time: ' + Location.commuteWeight())],
                     [m('.slider',

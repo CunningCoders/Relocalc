@@ -1,7 +1,7 @@
 var m = require('mithril');
 var Auth = require('./Auth');
 var _ = require('underscore');  //not really needed as it is used only once
-var fbUrl = 'https://craply.firebaseio.com/';
+var fbUrl = 'https://livability.firebaseio.com/';
 
 /**
  * You shoudld check the Fire base docs to understand the special methods to access data

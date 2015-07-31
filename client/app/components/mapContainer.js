@@ -1,5 +1,6 @@
 var m = require('mithril');
 var Location = require('../models/location');
+var path = require('path')
 //var loaderView = require('./loader').loader;
 
 /**
@@ -57,8 +58,58 @@ function mapSetup(options, element, isInitialized) {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  //Map styling
+  var workLat  = options.location.workLat() || 30.25;;
+  var workLng  = options.location.workLng() || -97.75;
+  var mapCenter = new google.maps.LatLng(lat, lng);
+  var mapOptions = {
+    center: new google.maps.LatLng(30.2500, -97.7500),
+    zoom: adjustZoom(),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var myLatLng = new google.maps.LatLng(lat, lng);
+  var workLatLng = new google.maps.LatLng(workLat, workLng)
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    icon: '/client/img/house',
+    title: options.location.address() || ''
+  });
+
+  var workMarker = new google.maps.Marker({
+    position: workLatLng,
+    map: map,
+    icon: '/client/img/office-building',
+    title: options.location.workAddress() || ''
+  });
+
   var map = new google.maps.Map(document.querySelector('.mapContainer'), mapOptions);
+
+  //Adds markers to map
+  marker.setMap(map);
+  workMarker.setMap(map);
+
+  var directionsDisplay = new google.maps.DirectionsRenderer({
+    suppressMarkers: true,
+    draggable: true
+  });
+  var directionsService = new google.maps.DirectionsService()
+  var request = {
+    origin: myLatLng,
+    destination: workLatLng,
+    travelMode: google.maps.TravelMode.DRIVING,
+    avoidTolls: true
+  };
+  directionsService.route(request, function(res, status){
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setMap(map);
+      directionsDisplay.setDirections(res);
+    }
+  });
+
+
+  //Map styling
 
   map.set('styles', [
   {
@@ -97,26 +148,9 @@ function mapSetup(options, element, isInitialized) {
         }]
     }
   ]);
+    var workLat  = options.location.workLat();
+    var workLng  = options.location.workLng();
 
-    var mapCenter = new google.maps.LatLng(lat, lng);
-    var mapOptions = {
-      center: new google.maps.LatLng(30.2500, -97.7500),
-      zoom: adjustZoom(),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-  var myLatLng = new google.maps.LatLng(lat, lng);
-
-  var marker = new google.maps.Marker({
-    //position: mapCenter,
-    position: myLatLng,
-    map: map,
-    icon: '/public/img//house2.png',
-    // icon: iconImg,
-    title: options.location.address() || ''
-  });
-
-
-  marker.setMap(map);
   google.maps.event.addListener(marker, 'click', toggleBounce);
 
 
@@ -128,5 +162,4 @@ function mapSetup(options, element, isInitialized) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
-
 }

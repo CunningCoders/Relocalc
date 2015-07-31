@@ -9,7 +9,7 @@ header.controller = function (options) {
 
   ctrl.loginUser = function(e) {
     e.preventDefault();
-      Auth.signIn( e.target.email.value, e.target.password.value , function( user, error, uid ) {
+      Auth.signIn(function( user, error, uid ) {
         if (user) {
           toastr["success"]("You are logged in!");
           //console.log("User: " + uid);
@@ -61,13 +61,8 @@ function renderLoggedOutView(ctrl){
             ])
           ]),  //end div wrapping ul
         m('form.navbar-form.navbar-right', {onsubmit: ctrl.loginUser},
-          [m('form-group',
-            [m('input.form-control.navbar-login[name="email"][autofocus][id="inputEmail"][placeholder="Email"][required][type="email"]')
-          ]),
-          m('form-group',
-            [m('input.form-control.navbar-login[name="password"][autocomplete="off"][id="inputPassword"][placeholder="Password"][required][type="password"]')
-          ]),
-          m('input.btn.btn-default.navbar-login.login-btn[type="submit"][value="Log in"]')
+          [
+          m('input.btn.btn-primary.navbar-login.login-btn[type="submit"][value="Log in with Facebook"]')
         ]) //end of form
       ]) //end container
 };
