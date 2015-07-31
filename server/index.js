@@ -50,6 +50,8 @@ app.post('/distance', function(req, res){
   })
 })
 
+app.post
+
 //Init objects for use in Zillow API calls.
 var houseData = {};
 var neighborhoodURL = '';
