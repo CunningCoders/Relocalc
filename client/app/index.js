@@ -41,7 +41,6 @@ m.route.mode = "hash";
 
 m.route(document.getElementById('app'), "/", {
   "/": Relocalc,
-  "/signup": Signup,
   "/about": About,
   "/searches/:userID": SearchList
 });
