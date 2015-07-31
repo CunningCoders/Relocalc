@@ -12,8 +12,19 @@ exports.controller = function(options) {
     
     //Initialize crime chart
     $(function () { 
+      var userData = Math.floor(Location.search().crimeAvg)
+      var averageData = Math.floor(Location.search().cityCrimeAvg)
+      var colors;
+      if (userData > averageData*1.2) {
+        colors = ['#DF5353', '#434348']
+      } else if (userData < averageData*0.8) {
+        colors = ['#55BF3B', '#434348']
+      } else {
+        colors = ['#DDDF0D', '#434348'] 
+      }
+
       $('.crimeGraph').highcharts({
-        colors: ['#7A878B', '#434348'],
+        colors: colors,
         chart: {
           type: 'column',
           spacing: 50,
@@ -54,9 +65,20 @@ exports.controller = function(options) {
   ctrl.initRestSafety = function (element, isInit, context) {
 
     //Initialize restaurant safety chart
-    $(function () { 
+    $(function () {
+      var userData = Math.floor(Location.search().restAvg)
+      var averageData = Math.floor(Location.search().cityRestAvg)
+      var colors;
+      if (userData > averageData*1.2) {
+        colors = ['#DF5353', '#434348']
+      } else if (userData < averageData*0.8) {
+        colors = ['#55BF3B', '#434348']
+      } else {
+        colors = ['#DDDF0D', '#434348'] 
+      }
+ 
       $('.restaurantSafety').highcharts({
-        colors: ['#7A878B', '#434348'],
+        colors: colors,
         chart: {
           type: 'column',
           spacing: 50
@@ -97,8 +119,19 @@ exports.controller = function(options) {
 
     //Initialize number of restaurants chart
     $(function () { 
+      var userData = Math.floor(Location.search().restaurants)
+      var averageData = Math.floor(Location.search().restaurants ? [51] : [0])
+      var colors;
+      if (userData < averageData*0.8) {
+        colors = ['#DF5353', '#434348']
+      } else if (userData > averageData*1.2) {
+        colors = ['#55BF3B', '#434348']
+      } else {
+        colors = ['#DDDF0D', '#434348'] 
+      }
+
       $('.restaurantNumber').highcharts({
-        colors: ['#7A878B', '#434348'],
+        colors: colors,
         chart: {
           type: 'column',
           spacing: 50
@@ -139,8 +172,18 @@ exports.controller = function(options) {
 
     //Initialize restaurant safety chart
     $(function () { 
+      var userData = Math.floor(Location.commuteTime())
+      var averageData = Math.floor(24.6)
+      var colors;
+      if (userData > averageData*1.2) {
+        colors = ['#DF5353', '#434348']
+      } else if (userData < averageData*0.8) {
+        colors = ['#55BF3B', '#434348']
+      } else {
+        colors = ['#DDDF0D', '#434348'] 
+      }
       $('.commuteTime').highcharts({
-        colors: ['#7A878B', '#434348'],
+        colors: colors,
         chart: {
           type: 'column',
           spacing: 50
@@ -180,9 +223,19 @@ exports.controller = function(options) {
   ctrl.initCostCompare = function (element, isInit, context) {
 
     //Initialize number of restaurants chart
-    $(function () { 
+    $(function () {
+      var userData = Location.zillowIncomeNeighborhood()
+      var averageData = Location.zillowIncomeCity()
+      var colors;
+      if (userData > averageData*1.2) {
+        colors = ['#DF5353', '#434348']
+      } else if (userData < averageData*0.8) {
+        colors = ['#55BF3B', '#434348']
+      } else {
+        colors = ['#DDDF0D', '#434348'] 
+      }
       $('.costCompare').highcharts({
-        colors: ['#7A878B', '#434348'],
+        colors: colors,
         chart: {
           type: 'column',
           spacing: 50
