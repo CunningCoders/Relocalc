@@ -1,12 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
 /* BEGIN general styling */
 body {
-  background-color: #435359;
+  background-color: #62738C;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Poiret One', cursive; }
+
+body::after {
+  content: "";
+  background: url(https://unsplash.imgix.net/photo-1433785567155-bf5530cab72c?dpr=2&fit=crop&fm=jpg&h=775&q=75&w=1050);
+  background-size: 1300px 1000px;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
 
 div, input, form, .navbar, .form-control, .btn, .panel {
   border-radius: 20px;
@@ -57,6 +69,7 @@ h3, h4 {
   font-size: 100px;
   text-align: center;
   font-weight: 200;
+  font-family: 'Playball', cursive;
   margin-top: -20px; }
 
 .row {
@@ -128,7 +141,7 @@ textarea:focus, input:focus {
 .addressInput-card {
   padding: 10px 25px 25px 25px;
   width: 100%;
-  background-color: #2A373C;
+  background-color: #3B4151;
   margin: 0 auto 10px;
   border-radius: 20px;
   overflow: hidden; }
@@ -170,11 +183,11 @@ textarea:focus, input:focus {
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-  background-color: #192C33; }
+  background-color: #A0A9BA; }
 
 .addressInput-submit:hover {
   border: 0px;
-  background-color: #758084; }
+  background-color: #C2683E; }
 
 .addressInput-help {
   width: 100%;
