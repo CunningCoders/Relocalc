@@ -34,9 +34,9 @@
     "pg": "^4.4.0",
     "request": "^2.60.0",
     "request-promise": "^0.4.3",
+    "sweetalert": "^1.1.0",
     "underscore": "^1.8.3",
-    "xml2js": "^0.4.9",
-    "sweetalert": "^1.1.0"
+    "xml2js": "^0.4.9"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

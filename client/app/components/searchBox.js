@@ -1,4 +1,5 @@
 var m = require('mithril');
+var path = require('path')
 var Location = require('../models/Location');
 var Relocalc = require('../index');
 var swal = require('sweetAlert');
