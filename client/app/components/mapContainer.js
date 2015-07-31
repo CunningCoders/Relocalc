@@ -108,42 +108,110 @@ function mapSetup(options, element, isInitialized) {
   //Map styling
 
   map.set('styles', [
-  {
-    "stylers": [
-      {
-        "hue": "#ff1a00"
-      },
-      {
-        "invert_lightness": true
-      },
-      {
-        "saturation": -100
-      },
-      {
-        "lightness": 40
-      },
-      {
-        "gamma": 0.5
-      }
-    ]
-  },
     {
-      "featureType": "water",
-      "elementType": "geometry",
+      "featureType": "road.highway",
       "stylers": [
-        {
-          "color": "#435359"
-        }
+          {
+            "lightness": 1
+          },
+          {
+            "hue": "#ff4400"
+          },
+          {
+            "gamma": 0.68
+          },
+          {
+            "saturation": -32
+          },
+          {
+            "visibility": "on"
+          }
       ]
     },
     {
-      "featureType": "landscape",
-      "stylers": [
-        {
-          "color": "#2A373C"
-        }]
+        "featureType": "road.arterial",
+        "stylers": [
+          {
+            "hue": "#ff4d00"
+          },
+          {
+            "visibility": "on"
+          },
+          {
+            "lightness": -17
+          },
+          {
+            "gamma": 1.2
+          },
+          {
+            "saturation": 7
+          }
+      ]
+    },
+    {
+        "featureType": "road.local",
+        "stylers": [
+          {
+            "lightness": -5
+          },
+          {
+            "saturation": -100
+          }
+      ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+      ]
+    },
+    {
+        "featureType": "poi",
+        "stylers": [
+          {
+            "visibility": "on"
+          },
+          {
+            "saturation": -100
+          },
+          {
+            "gamma": 1.22
+          }
+      ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "stylers": [
+          {
+            "saturation": -100
+          },
+          {
+            "gamma": 2
+          }
+      ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [
+          {
+            "hue": "#003bff"
+          },
+          {
+            "gamma": 1.45
+          }
+      ]
+    },
+    {
+        "featureType": "transit",
+        "stylers": [
+          {
+            "saturation": -100
+          }
+      ]
     }
-  ]);
+]);
     var workLat  = options.location.workLat();
     var workLng  = options.location.workLng();
 
