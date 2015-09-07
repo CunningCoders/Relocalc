@@ -12,6 +12,9 @@ The end user will be able to compare the results of particular data for an addre
 In addition, the user will be able to scale the importance of each element to receive a weighted result depending on 
 the user's own priorities. 
 
+![Screen Shot 1](https://s3-us-west-2.amazonaws.com/github-imgs/livability/Livability1.png)
+![Screen Shot 2](https://s3-us-west-2.amazonaws.com/github-imgs/livability/Livability3.png)
+![Screen Shot 3](https://s3-us-west-2.amazonaws.com/github-imgs/livability/Livability2.png)
 ```
 +--client/
 ├── index.js - main view and routes 
